@@ -39,7 +39,6 @@ Check out the live version here:
 🔗 [GitHub Profile](https://github.com/Hariomkabra)
 
 ---
-
 ## 📌 Note
 
 This is a static website project built for showcasing modern real estate solutions. Backend integration for booking, contact forms, or authentication can be added based on requirements.
