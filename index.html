@@ -7,6 +7,8 @@
      <link rel="icon" href="img/logo.png" type="image/gif" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Open Sans:400,700|Niramit:300,700" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQmQa7TBVF4CvE1HpjeRnKCwH3nb8QCnrFxxIbzj5FWyo4xvhEBCbf9zQ+8CK6cm/YGBfSIHh6mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -26,106 +28,123 @@
     
     <header role="banner">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand position-absolute" href="index.html">
-            <div style="width: 200px;">
-              <img width="100%" src="img/logo.png"/>
-            </div>
-              
-              
-          </a>
-         
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
-            <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link linkred" href="services.html" id="dropdown04"><span>Services</span></a>
-                 </li>
-              <li class="nav-item">
-                <a class="nav-link linkred" href="works.html"><span>Projects</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link linkred" href="FloorPlans.html"><span>Floor Plans</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link linkred" href="about.html"><span>About</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link linkred" href="contact.html"><span>Contact</span></a>
-              </li>
-              <li class="nav-item cta-btn2">
-                <a class="nav-link linkred" href="get-quote.html">
-                  <span class="d-inline-block px-4 py-2 border">Quotation</span>
-                </a>
-              </li>
-            </ul>
+          <div class="container">
+              <a class="navbar-brand" href="index.html" style="width: 200px;">
+                  <img width="100%" src="img/logo.png" alt="Brick & Bolt Home Construction Logo"/>
+              </a>
+  
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+  
+              <div class="collapse navbar-collapse" id="navbarsExample05">
+                  <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
+                      <li class="nav-item">
+                          <a class="nav-link active" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link linkred" href="services.html" id="dropdown04"><span>Services</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link linkred" href="works.html"><span>Projects</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link linkred" href="FloorPlans.html"><span>Floor Plans</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link linkred" href="about.html"><span>About</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link linkred" href="contact.html"><span>Contact</span></a>
+                      </li>
+                      <li class="nav-item cta-btn2">
+                          <a class="nav-link linkred" href="get-quote.html">
+                              <span class="d-inline-block px-4 py-2 border">Quotation</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+  
+              <div class="d-none d-lg-flex align-items-center ml-auto">
+                  <a href="#" class="btn btn-primary rounded-pill mr-3">Let's Build</a>
+                  <a href="tel:+917676523305" class="text-dark"><i class="fa fa-phone mr-2"></i>+91 76765 23305</a>
+              </div>
           </div>
-          
-          
-        </div>
       </nav>
-    </header>
+  </header>
     
     <!-- END header -->
-    
-    <section class="home-slider owl-carousel" style="margin-top: 15px;">
-      <div class="slider-item" style="background-image: url('img/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg');">
+
+      <!-- Hero section  -->
+
+      <!--  slider -->
+
+    <div class="home-slider-wrapper" style="position: relative; margin-top: 15px;">
+      <div class="consultation-card" style="position: absolute; top: 80px; right: 20px; z-index: 100;">
+
         
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center text-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1 class="mb-4" style="color: black;"> Customized Innovative Designs for Smart Living</h1>
-              <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
-              
-            </div>
-          </div>
-        </div>
-
+          <!-- Consultation Card HTML -->
+          <h4><i class="fa fa-phone"></i>Talk to Our Expert</h4>
+          <form>
+              <input type="text" placeholder="Name*" required />
+              <input type="text" placeholder="📞 Mobile Number*" required />
+              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Location of your Plot*" required />
+              <button type="submit" class="btn">Book Free Consultation</button>
+              <p class="note">
+                  By submitting this form, I confirm that I have read and agreed to accept
+                  the privacy policy.
+              </p>
+          </form>
       </div>
-
-      <div class="slider-item" style="background-image: url('img/florian-schmidinger-b_79nOqf95I-unsplash.jpg');">
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center text-center">
-            <div class="col-md-8 col-sm-12 element-animate">
-              <h1 class="mb-4" style="color: black;">Extreme Engineering and Construction</h1>
-              <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
-            </div>
+  
+      <section class="home-slider owl-carousel">
+          <div class="slider-item" style="background-image: url('img/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg');">
+              <div class="container">
+                  <div class="row slider-text align-items-center justify-content-center text-center">
+                      <div class="col-md-7 col-sm-12 element-animate">
+                          <h1 class="mb-4" style="color: black;"> Customized Innovative Designs for Smart Living</h1>
+                          <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        
-      </div>
-
-      <div class="slider-item" style="background-image: url('img/webaliser-_TPTXZd9mOo-unsplash.jpg');">
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center text-center">
-            <div class="col-md-8 col-sm-12 element-animate">
-              <h1 class="mb-4" style="color: black;">Dream Home, Cost Effectiveness</h1>
-              <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
-            </div>
+  
+          <div class="slider-item" style="background-image: url('img/florian-schmidinger-b_79nOqf95I-unsplash.jpg');">
+              <div class="container">
+                  <div class="row slider-text align-items-center justify-content-center text-center">
+                      <div class="col-md-8 col-sm-12 element-animate">
+                          <h1 class="mb-4" style="color: black;">Extreme Engineering and Construction</h1>
+                          <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        
-      </div>
-
-      <div class="slider-item" style="background-image: url('img/naomi-ellsworth-EMPLSuvDuhQ-unsplash.jpg');">
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center text-center">
-            <div class="col-md-8 col-sm-12 element-animate">
-              <h1 class="mb-4">We make your Dreams as Real</h1>
-              <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
-            </div>
+  
+          <div class="slider-item" style="background-image: url('img/webaliser-_TPTXZd9mOo-unsplash.jpg');">
+              <div class="container">
+                  <div class="row slider-text align-items-center justify-content-center text-center">
+                      <div class="col-md-8 col-sm-12 element-animate">
+                          <h1 class="mb-4" style="color: black;">Dream Home, Cost Effectiveness</h1>
+                          <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        
-      </div>
+  
+          <div class="slider-item" style="background-image: url('img/naomi-ellsworth-EMPLSuvDuhQ-unsplash.jpg');">
+              <div class="container">
+                  <div class="row slider-text align-items-center justify-content-center text-center">
+                      <div class="col-md-8 col-sm-12 element-animate">
+                          <h1 class="mb-4">We make your Dreams as Real</h1>
+                          <p class="mb-0"><a href="works.html" target="_blank" class="btn btn-primary">Get Started</a></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
 
-    </section>
     <!-- END slider -->
 
     <section class="section bg-light">
@@ -136,8 +155,8 @@
               <h2 class="text-uppercase heading border-bottom mb-4 text-left">We Are Expert in <br>Construction Field</h2>
               <p>
                 We, at Ideal Homes, have always believed in Constructing Happiness for our customers who 
-believe in investing safely in happy homes for generations to come. Our vast experience in the 
-Construction field for over 15 years will help the customers to get a right choice
+                believe in investing safely in happy homes for generations to come. Our vast experience in the 
+                Construction field for over 15 years will help the customers to get a right choice.
 
               </p>
               <p>
@@ -237,8 +256,6 @@ Construction field for over 15 years will help the customers to get a right choi
             </div>
           </div>
 
-
-
           
         </div>
         <!-- END row -->
@@ -261,44 +278,289 @@ Construction field for over 15 years will help the customers to get a right choi
 
     <footer class="site-footer bg-dark" role="contentinfo">
       <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="http://livingwalls.in/" target="_blank" >livingwalls</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+          <div class="row">
+              <div class="col-lg-3 mb-4 mb-lg-0">
+                  <h2 class="footer-heading mb-4 text-white">Site Map</h2>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white-50">How it Works</a></li>
+                      <li><a href="#" class="text-white-50">Our Projects</a></li>
+                      <li><a href="#" class="text-white-50">Luxury Projects</a></li>
+                      <li><a href="#" class="text-white-50">Cost Estimator</a></li>
+                      <li><a href="#" class="text-white-50">Material Estimator</a></li>
+                      <li><a href="#" class="text-white-50">Floor Plans</a></li>
+                      <li><a href="about.html" class="text-white-50">About Us</a></li>
+                      <li><a href="#" class="text-white-50">Blogs and Articles</a></li>
+                      <li><a href="#" class="text-white-50">Careers</a></li>
+                      <li><a href="contact.html" class="text-white-50">Contact Us</a></li>
+                      <li><a href="#" class="text-white-50">Reviews</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-2 mb-4 mb-lg-0">
+                  <h2 class="footer-heading mb-4 text-white">Others</h2>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white-50">Join us as a professional</a></li>
+                      <li><a href="#" class="text-white-50">Refer a Friend</a></li>
+                      <li><a href="#" class="text-white-50">Channel Partner</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-2 mb-4 mb-lg-0">
+                  <h2 class="footer-heading mb-4 text-white">Information</h2>
+                  <ul class="list-unstyled">
+                      <li><a href="#" class="text-white-50">Terms & Conditions</a></li>
+                      <li><a href="#" class="text-white-50">Privacy Policy</a></li>
+                      <li><a href="#" class="text-white-50">FAQs</a></li>
+                      <li><a href="#" class="text-white-50">Cancellation Policy</a></li>
+                      <li><a href="#" class="text-white-50">Referral Policy</a></li>
+                      <li><a href="#" class="text-white-50">News & Media</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-5">
+                  <h2  class="footer-heading mb-4 text-white">Brick&Bolt Construction for Business <i class="fa fa-arrow-right"></i></h2>
+                  <h2 class="footer-heading mb-4 text-white">Brick&Bolt Building Materials <i class="fa fa-arrow-right"></i></h2>
+   
+                  <div class="mt-5">
+                      <h2 class="footer-heading mb-4 text-white">Get in Touch</h2>
+                      <p class="mb-0"><a href="tel:+917505205205" class="text-white-50">+91 7505 205 205</a></p>
+                      <p><a href="mailto:support@bricknbolt.com" class="text-white-50">support@Livinwalls.com</a></p>
+                  </div>
+  
+                  <div class="col-md-3">
+                    <h3 class="text-white">Social</h3>
+                    <ul class="list-unstyled footer-link d-flex footer-social">
+                      <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+                      <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+                      <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+                      <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+                  </div>
+  
+                  <div class="mt-5">
+                    <h2 class="footer-heading mb-4 text-white">Download Our App</h2>
+                    <p class="">
+                        <a href="#" class="mr-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" height="30"></a>
+
+                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Download_on_the_App_Store_RGB_blk.svg/2560px-Download_on_the_App_Store_RGB_blk.svg.png" alt="App Store" height="30"></a>
+
+                    </p>
+                </div>
+              </div>
           </div>
-          <div class="col-md-3">
-            <ul class="list-unstyled footer-link">
-              <li><span class="mr-3 d-block">Address:</span><span class="text-white">Test Address,&nbsp; P.P 23/467 &nbsp; Anathapur - 695020
-                </span></li>
-                <li><span class="mr-3 d-block">Phone:</span><span class="text-white">+91&nbsp; 7000000000 </span></li>
-                <li><span class="mr-3 d-block">Mob:</span><span class="text-white">+91&nbsp; 7000000000</span></li>
-              <li><span class="mr-3 d-block">E-mail:</span><span class="text-white">livingwalls@gmail.com </span></li>
-            </ul>
+          <hr>
+
+          <div class="row pt-5 mt-5 text-center">
+              <div class="col-md-12">
+                  <p>
+                      Copyright &copy;
+                      <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://livingwallconstruction.netlify.app/" target="_blank" class="text-primary">Living_Walls_Construction</a>
+                  </p>
+              </div>
+              <hr>
           </div>
-          <div class="col-md-3">
-            <h3 class="text-white">Quick Links</h3>
-            <ul class="list-unstyled footer-link">
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="works.html">Works</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h3 class="text-white">Social</h3>
-            <ul class="list-unstyled footer-link d-flex footer-social">
-              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
-            </ul>
-          </div>
-        </div>
+          
       </div>
-    </footer>
+      
+  </footer>
+  
+
+  <!--Footer Details Section-->
+
+  <div class="site-footer-details bg-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="footer-details-heading text-white">Construction Companies Bengaluru</h3>
+                <ul class="list-unstyled footer-details-list">
+                    <li><a href="index.html" class="footer-details-link">Construction Company Bengaluru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Construction Contractors Bengaluru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Construction in Bengaluru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Builders in Bengaluru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Low-Cost House Construction in Bengaluru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Building Contractors Bengaluru</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="footer-details-heading text-white">Construction Companies Hyderabad</h3>
+                <ul class="list-unstyled footer-details-list">
+                    <li><a href="index.html" class="footer-details-link">Construction Company Hyderabad</a></li>
+                    <li><a href="index.html" class="footer-details-link">Construction Contractors Hyderabad</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Construction in Hyderabad</a></li>
+                    <li><a href="index.html" class="footer-details-link">Builders in Hyderabad</a></li>
+                    <li><a href="index.html" class="footer-details-link">Low-Cost House Construction in Hyderabad</a></li>
+                    <li><a href="index.html" class="footer-details-link">Building Contractors Hyderabad</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="footer-details-heading text-white">Construction Companies Chennai</h3>
+                <ul class="list-unstyled footer-details-list">
+                    <li><a href="index.html" class="footer-details-link">Construction Company Chennai</a></li>
+                    <li><a href="index.html" class="footer-details-link">Construction Contractors Chennai</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Construction in Chennai</a></li>
+                    <li><a href="index.html" class="footer-details-link">Builders in Chennai</a></li>
+                    <li><a href="index.html" class="footer-details-link">Low-Cost House Construction in Chennai</a></li>
+                    <li><a href="index.html" class="footer-details-link">Building Contractors Chennai</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="footer-details-heading text-white">Home Renovation Services</h3>
+                <ul class="list-unstyled footer-details-list">
+                    <li><a href="index.html" class="footer-details-link">Home Renovation Bengaluru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Renovation Hyderabad</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Renovation Chennai</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Renovation Mysuru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Renovation Delhi</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <h3 class="footer-details-heading text-white">Construction Companies Mysuru</h3>
+                <ul class="list-unstyled footer-details-list">
+                    <li><a href="index.html" class="footer-details-link">Construction Company Mysuru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Construction Contractors Mysuru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Construction in Mysuru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Builders in Mysuru</a></li>
+                    <li><a href="index.html" class="footer-details-link">Low-Cost House Construction in Mysuru</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="footer-details-heading text-white">Construction Companies Delhi NCR</h3>
+                <ul class="list-unstyled footer-details-list">
+                    <li><a href="index.html" class="footer-details-link">Construction Company Delhi</a></li>
+                    <li><a href="index.html" class="footer-details-link">Construction Contractors Delhi</a></li>
+                    <li><a href="index.html" class="footer-details-link">Home Construction in Delhi</a></li>
+                    <li><a href="index.html" class="footer-details-link">Builders in Delhi</a></li>
+                    <li><a href="index.html" class="footer-details-link">Low-Cost House Construction in Delhi</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                </div>
+        </div>
+    </div>
+</div>
+
+        <!--Our Services-->
+
+
+        <div class="below-footer-section py-5">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <h2 class="section-heading h3 mb-4">Get the Perfect House Plan with Brick & Bolt</h2>
+                      <p class="section-text">
+                          We understand the overwhelming effort that goes into building your dream home. Dealing with multiple contractors need not be a tiresome process anymore. Your search for an
+                          efficient house construction company ends with Brick & Bolt. We empower clients with the assurance of reliability, quality, timely delivery, and expert craftsmanship. With a motto
+                          to offer absolute transparency through technological assistance.
+                      </p>
+                  </div>
+              </div>
+              <div class="row mt-4">
+                  <div class="col-12">
+                      <h3 class="section-heading h4 mb-4">Why Should You Consider Our Services for Home Construction?</h3>
+                      <p class="section-text">
+                          To ensure we meet your expectations of a dream home, our home constructions go through 470+ quality checks per floor. Our construction company ensures money safety
+                          through the ESCROW mechanism. We also have exceptional trademarked quality standards, QASCON (Quality Assessment System for Construction).
+                      </p>
+                  </div>
+              </div>
+              <hr>
+              
+              <div class="row mt-4">
+                  <div class="col-12">
+                      <h3 class="section-heading h4 mb-4">Our Services</h3>
+                      <ul class="list-unstyled service-list">
+                          <li><span class="service-name">B2C Construction Service</span></li>
+                          <li><span class="service-name">Residential Construction Service</span></li>
+                          <li><span class="service-name">Villa Construction Service with House Architecture Plans</span></li>
+                          <li><span class="service-name">Farmhouse Construction Services</span></li>
+                          <li>
+                              <span class="service-name">House Plan</span>
+                              <ul class="list-unstyled sub-list">
+                                  <li><span class="sub-service-name">1 BHK House Plan</span></li>
+                                  <li><span class="sub-service-name">2 BHK House Plan</span></li>
+                                  <li><span class="sub-service-name">3 BHK House Plan</span></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="row mt-4">
+                  <div class="col-12">
+                      <h3 class="section-heading h4 mb-4">Why Choose Brick & Bolt to build your dream construction?</h3>
+                      <p class="section-text">
+                          We are an efficient, reliable, and trusted construction company. Having built 7000+ homes with 470+ quality checks per floor, our credibility is unmatched. Our standardized
+                          construction process ensures on-time delivery. We use the most advanced design software that builds an accurate 3D BIM model.
+                      </p>
+                  </div>
+              </div>
+              <div class="row mt-4">
+                  <div class="col-12">
+                      <h3 class="section-heading h4 mb-4">What makes us stand out?</h3>
+                      <p class="section-text">
+                          We are India's No. 1 tech-enabled construction company. With apps exclusively available on the Google Play Store and Apple App Store, you can experience every aspect of home
+                          construction at your fingertips. From real-time project tracking to quality checks and payment schedules, everything is available on your phone's screen.
+                      </p>
+                  </div>
+              </div>
+              <hr>
+          </div>
+      </div>
+
+
+        <!-- B2B Construction Service -->
+
+
+        <div class="b2b-locations-section bg-dark py-5">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <h2 class="section-heading mb-4 text-white">B2B Construction Service</h2>
+                      <p class="section-text text-white">
+                          We offer construction partnership services to those seeking to build commercial buildings. You can expand your business through our flexible and adaptable techniques by
+                          partnering with us. With a team of over 800 contractors and a rigorous quality assurance process consisting of more than 470 checks, we are fully equipped to deliver
+                          exceptional commercial spaces that will elevate your business to new heights.
+                      </p>
+                      <h3 class="sub-heading mt-4 mb-4 text-white">Commercial Construction Service</h3>
+                      <p class="section-text text-white">
+                          We are an efficient construction company that creates impressive commercial spaces. This requires the intervention of several industry experts. Our commercial construction
+                          service allows for an optimal environment for increased productivity.
+                      </p>
+                      <h3 class="sub-heading mt-4 mb-4 text-white">Warehouse Construction Service</h3>
+                      <p class="section-text text-white">
+                          With a flawless building construction service, we deliver exceptional spaces designed to safeguard and preserve your valuable materials.
+                      </p>
+                      <h3 class="sub-heading mt-4 mb-4 text-white">Retail Construction Service</h3>
+                      <p class="section-text text-white">
+                          The highly-qualified designers employed at our construction company create distinctive retail space designs.
+                      </p>
+                      <h3 class="sub-heading mt-4 mb-4 text-white">Hospital Construction Service</h3>
+                      <p class="section-text text-white">
+                          We build world-class hospital spaces with the best building material supply and appropriate design and construction. They are meticulously designed to cater to both doctors
+                          and patients.
+                      </p>
+                      <h3 class="sub-heading mt-4 mb-4 text-white">Hospitality Construction Service</h3>
+                      <p class="section-text text-white">
+                          Looking to form a memorable guest-host bond? Our construction company will help you make the experience for your customers worth remembering.
+                      </p>
+                      <h3 class="sub-heading mt-4 mb-4 text-white">School Construction Service</h3>
+                      <p class="section-text text-white">
+                          Need help creating a space that nurtures bright minds and lively souls? Hire our construction company to make your school's construction highly efficient with the added
+                          assistance of technological advancements.
+                      </p>
+                      
+                      <hr>
+      
+                      <h2 class="section-heading mt-5 mb-4 text-white">Locations</h2>
+                      <ul class="list-unstyled location-list">
+
+                        <li class="location-item text-white">House Construction in Bengaluru, House Construction in Chennai,House Construction in Mysuru,House Construction in NCR Faridabad,House Construction in NCR Ghaziabad,House Construction in NCR Noida</li>
+                        <li class="location-item text-white">House Construction in Mysuru, House Construction in Hyderabad,House Construction in Hyderabad,House Construction in NCR Gurgaon,House Construction in NCR Delhi,House Construction in Pune</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
     <!-- END footer -->
 
     <!-- loader -->
