@@ -57,6 +57,38 @@ h1, h2, h3, h4, h5 {
     background: #fff;
     color: #000; }
 
+
+    /*WhatsApp Floating Icon*/
+    .whatsapp-icon-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .whatsapp-icon-fixed a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #25d366;
+      color: white;
+      font-size: 30px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .whatsapp-icon-fixed a:hover {
+      transform: scale(1.1);
+    }
+    
+    .whatsapp-icon-fixed img {
+      height: 36px;
+      width: 36px;
+    }
+
 /* Header */
 header {
   position: relative;
@@ -974,7 +1006,6 @@ hr {
   margin-bottom: 0.5rem;
   color: #fff;
 }
-
 
 
 
