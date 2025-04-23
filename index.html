@@ -83,6 +83,149 @@
       </a>
     </div>
 
+       <!-- End WhatsApp Floating Icon--> 
+
+        <!-- Chatbot with WhatsApp Fallback-->
+
+
+        <div class="chat-container">
+          <div class="chat-icon-container">
+            <img src="https://img.freepik.com/premium-vector/cartoon-boy-wearing-hard-hat-holding-pencil_481747-54623.jpg" alt="Chat Icon" style="height: 60px; width: 60px; border-radius: 50%;" class="chat-icon">
+          </div>
+          <div class="chat-window">
+            <div class="chat-header">Chat Support</div>
+            <div class="chat-messages">
+              <div class="message bot">
+                <span class="sender">Bot:</span>
+                <div class="message-content">Hello! How can I assist you today?</div>
+              </div>
+            </div>
+            <div class="message-options">
+              <button class="option-button" data-option="option1">What services do you offer?</button>
+              <button class="option-button" data-option="option2">How much does it cost?</button>
+              <button class="option-button" data-option="option3">Where are you located?</button>
+              <button class="option-button" data-option="option4">Do you have 24/7 support?</button>
+              <button class="option-button" data-option="option5">Other question</button>
+            </div>
+            <div class="input-area" style="display:none;">
+              <input type="text" placeholder="Type your question..." />
+              <button id="send-button">Send</button>
+            </div>
+            <div class="whatsapp-fallback">
+              Need more help?
+              <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Icon" class="whatsapp-icon-small">
+                Chat on WhatsApp
+              </a>
+            </div>
+            <div class="scroll-prompt">Ask your query</div>
+          </div>
+        </div>
+        
+        <script>
+        const chatIconContainer = document.querySelector(".chat-icon-container");
+        const chatWindow = document.querySelector(".chat-window");
+        const chatMessages = document.querySelector(".chat-messages");
+        const messageOptions = document.querySelector(".message-options");
+        const whatsappFallback = document.querySelector(".whatsapp-fallback");
+        const sendButtonArea = document.querySelector(".input-area");
+        const sendButton = document.querySelector("#send-button");
+        const textInput = document.querySelector(".input-area input");
+        
+        const whatsappNumber = "YOUR_PHONE_NUMBER"; // Replace with your WhatsApp number including country code.
+        
+        let isChatOpen = false;
+        let currentQuestion = 0;
+        const questions = [
+          "What services do you offer?",
+          "How much does it cost?",
+          "Where are you located?",
+          "Do you have 24/7 support?",
+          "Other question"
+        ];
+        
+        chatIconContainer.addEventListener("click", () => {
+          isChatOpen = !isChatOpen;
+          chatWindow.style.display = isChatOpen ? "flex" : "none";
+          if (isChatOpen) {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+        });
+        
+        chatWindow.addEventListener('scroll', () => {
+          if (chatWindow.scrollTop > 50) {
+            chatWindow.classList.add('show-scroll-prompt');
+          } else {
+            chatWindow.classList.remove('show-scroll-prompt');
+          }
+        });
+        
+        messageOptions.addEventListener("click", (event) => {
+          if (event.target.classList.contains("option-button")) {
+            const option = event.target.dataset.option;
+            let response = "";
+        
+            switch (option) {
+              case "option1":
+                response = "We offer house construction services.";
+                break;
+              case "option2":
+                response = "Cost varies depending on the project.  Please provide more details.";
+                break;
+              case "option3":
+                response = "We operate in Bengaluru, Chennai, Hyderabad, and Mysuru.";
+                break;
+                case "option4":
+                response = "Yes, we have 24/7 support.";
+                break;
+              case "option5":
+                response = "Please type your question below.";
+                sendButtonArea.style.display = "flex";
+                messageOptions.style.display = "none";
+                return;
+              default:
+                response = "I'm sorry, I didn't understand that.";
+            }
+        
+            addMessage("user", event.target.textContent);
+            addMessage("bot", response);
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+              // Show the next question
+              messageOptions.innerHTML = `<button class="option-button" data-option="option${currentQuestion + 1}">${questions[currentQuestion]}</button>`;
+            } else {
+              messageOptions.style.display = 'none';
+            }
+          }
+        });
+        
+        sendButton.addEventListener("click", () => {
+          const question = textInput.value;
+          if (question.trim() !== "") {
+            addMessage("user", question);
+            // Here you would add logic to fetch a more detailed answer
+            addMessage("bot", "Thank you!  A customer representative will contact you soon.");
+            textInput.value = "";
+            sendButtonArea.style.display = "none";
+            messageOptions.style.display = "flex";
+          }
+        });
+        
+        function addMessage(sender, text) {
+          const messageDiv = document.createElement("div");
+          messageDiv.classList.add("message", sender);
+          messageDiv.innerHTML = `<span class="sender">${sender}:</span><div class="message-content">${text}</div>`;
+          chatMessages.appendChild(messageDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        </script>
+        
+
+   
+
+    <!-- End Chatbot with WhatsApp Fallback-->
+    
+
       <!-- Hero section  -->
 
       <!--  slider -->

@@ -88,6 +88,174 @@ h1, h2, h3, h4, h5 {
       height: 36px;
       width: 36px;
     }
+     
+
+    /* Chatbot with WhatsApp Fallback*/
+
+    .chat-container {
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .chat-icon-container {
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    
+    .chat-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #007bff;
+      color: white;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+    
+    .chat-icon:hover {
+      background-color: #0056b3;
+    }
+    
+    .chat-window {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      max-height: 400px;
+      overflow-y: auto;
+      display: none;
+      flex-direction: column;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    
+    .chat-header {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-bottom: 1px solid #ccc;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .chat-messages {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    
+    .message {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .sender {
+      font-size: 0.9em;
+      color: #888;
+    }
+    
+    .user .message-content {
+      background-color: #e0f7fa;
+      border-radius: 5px;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: 0;
+      max-width: 80%;
+      text-align: right;
+    }
+    
+    .bot .message-content {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      padding: 10px;
+      margin-left: 0;
+      margin-right: auto;
+      max-width: 80%;
+      text-align: left;
+    }
+    
+    .message-options {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    
+    .option-button {
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+    }
+    
+    .option-button:hover {
+      background-color: #45a049;
+    }
+    
+    .whatsapp-fallback {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f8f8f8;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      color: #25d366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .whatsapp-icon-small {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    
+    .input-area {
+      display: flex;
+      margin-top: 10px;
+    }
+    
+    .input-area input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+    }
+    
+    .input-area button {
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .input-area button:hover {
+      background-color: #0056b3;
+    }
+    /* End Chatbot with WhatsApp Fallback*/
 
 /* Header */
 header {
