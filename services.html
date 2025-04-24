@@ -5,23 +5,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/logo.png" type="image/gif" sizes="16x16">
-    <link href="https://fonts.googleapis.com/css?family=Open Sans:400,700|Niramit:300,700" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Niramit:300,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
-    
     <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-
+    <!-- AOS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      /* Dropdown Hover Effect */
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 0;
+      }
+      .dropdown-item {
+        color: #333;
+        transition: color 0.3s ease;
+      }
+      .dropdown-item:hover {
+        color: #e57373;
+        background-color: transparent;
+      }
+      @media (max-width: 992px) {
+        .nav-item.dropdown:hover .dropdown-menu {
+          display: none; /* Disable hover on mobile, rely on click */
+        }
+      }
+    </style>
   </head>
   <body>
-    
     <header role="banner">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -29,20 +49,25 @@
             <div style="width: 200px;">
               <img width="100%" src="img/logo.png"/>
             </div>
-            
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse position-relative" id="navbarsExample05">
             <ul class="navbar-nav mx-auto pl-lg-5 pl-0 d-flex align-items-center">
               <li class="nav-item">
                 <a class="nav-link linkred" href="index.html"><span>Home</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="services.html" id="dropdown04">Services</a>
-              
+              <li class="nav-item dropdown">
+                <a class="nav-link linkred dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Services</span></a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="service-details.html?srtype=MW">Maintenance Work</a>
+                  <a class="dropdown-item" href="service-details.html?srtype=LC">Labour Contracting</a>
+                  <a class="dropdown-item" href="service-details.html?srtype=3D">3D Designing</a>
+                  <a class="dropdown-item" href="service-details.html?srtype=HR">House Renovation</a>
+                  <a class="dropdown-item" href="service-details.html?srtype=FR">Flooring & Roofing</a>
+                  <a class="dropdown-item" href="service-details.html?srtype=GC">General Contracting</a>
+                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link linkred" href="works.html"><span>Projects</span></a>
@@ -50,12 +75,11 @@
               <li class="nav-item">
                 <a class="nav-link linkred" href="FloorPlans.html"><span>Floor Plans</span></a>
               </li>
-            
               <li class="nav-item">
-                <a class="nav-link linkred" href="about.html"><span>About</span> </a>
+                <a class="nav-link linkred" href="about.html"><span>About</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link linkred" href="contact.html"><span>Contact</span> </a>
+                <a class="nav-link linkred" href="contact.html"><span>Contact</span></a>
               </li>
               <li class="nav-item cta-btn2">
                 <a class="nav-link linkred" href="get-quote.html">
@@ -68,10 +92,9 @@
       </nav>
     </header>
     <!-- END header -->
-    
+
     <section class="inner-page" style="margin-top: 15px;">
       <div class="slider-item py-5" style="background: #343a40 !important;">
-        
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center text-center">
             <div class="col-md-7 col-sm-12 element-animate">
@@ -79,86 +102,107 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
-    
+
     <section class="section bg-light">
       <div class="container">
+        <div class="row justify-content-center mb-5" data-aos="fade-up">
+          <div class="col-md-8 text-center">
+            <h2 class="text-uppercase heading border-bottom mb-4">Services</h2>
+            <p class="mb-3 lead">Ideal Homes promise, joy of being home is delivered through our sincere commitment towards eco-friendliness and uncompromising approach towards ultramodern designs. We make sure that your stay with us is as memorable as possible.</p>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-engineer icon"></span>
-              <div class="media-body">
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-engineer icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">Maintenance Work</h3>
                 <p>Additional maintenance works like painting, plumbing etc...</p>
-                <p><a href="service-details.html?srtype=MW" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=MW" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-helmet icon"></span>
-              <div class="media-body">
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-helmet icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">Labour Contracting</h3>
                 <p>Providing you the best range of labour contractor manpower...</p>
-                <p><a href="service-details.html?srtype=LC" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=LC" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-building icon"></span>
-              <div class="media-body">
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-building icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">3D Designing</h3>
                 <p>With realistic 3D visualizations, graphic, and animation,...</p>
-                <p><a href="service-details.html?srtype=3D" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=3D" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-blueprint icon"></span>
-              <div class="media-body">
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-blueprint icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">House Renovation</h3>
                 <p>Your existing old building can be made new(renovated) with remodelling,...</p>
-                <p><a href="service-details.html?srtype=HR" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=HR" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-building-1 icon"></span>
-              <div class="media-body">
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-building-1 icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">Flooring & Roofing</h3>
                 <p>We specialize in advanced technologies of the ever-growing roofing market...</p>
-                <p><a href="service-details.html?srtype=FR" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=FR" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-crane icon"></span>
-              <div class="media-body">
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-crane icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">General Contracting</h3>
                 <p>Ideal Homes have their strong presence in the arena of Construction...</p>
-                <p><a href="service-details.html?srtype=GC" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=GC" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-
-
-
-      
-
-       
+        </div>
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="700">
+          <div class="col-md-4">
+            <p><a href="services.html" class="btn btn-primary btn-block holographic-btn">View All Services</a></p>
+          </div>
         </div>
       </div>
+
+   
+     
     </section>
-    <!-- END section -->
 
     <section class="section border-t">
       <div class="container">
@@ -171,7 +215,6 @@
             <p><a href="works.html" class="btn btn-primary">View All Works</a></p>
           </div>
         </div>
-
         <div class="row no-gutters">
           <div class="col-md-4 element-animate">
             <a href="works-single.html?prtype=vs1" class="link-thumbnail">
@@ -195,11 +238,9 @@
             </a>
           </div>
         </div>
-
       </div>
     </section>
     <!-- END section -->
-  
 
     <!--<section class="container cta-overlap">
       <div class="text d-flex">
@@ -216,17 +257,14 @@
         <div class="row">
           <div class="col-md-3">
             <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="http://livingwalls.in/" target="_blank" >livingwalls</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="http://livingwalls.in/" target="_blank" >livingwalls</a>
             </p>
           </div>
           <div class="col-md-3">
             <ul class="list-unstyled footer-link">
-              <li><span class="mr-3 d-block">Address:</span><span class="text-white">Test Address,&nbsp; P.P 23/467 &nbsp; Anathapur - 695020
-                </span></li>
-                <li><span class="mr-3 d-block">Phone:</span><span class="text-white">+91&nbsp; 7000000000 </span></li>
-                <li><span class="mr-3 d-block">Mob:</span><span class="text-white">+91&nbsp; 7000000000</span></li>
+              <li><span class="mr-3 d-block">Address:</span><span class="text-white">Test Address, P.P 23/467 Anathapur - 695020</span></li>
+              <li><span class="mr-3 d-block">Phone:</span><span class="text-white">+91 7000000000 </span></li>
+              <li><span class="mr-3 d-block">Mob:</span><span class="text-white">+91 7000000000</span></li>
               <li><span class="mr-3 d-block">E-mail:</span><span class="text-white">livingwalls@gmail.com </span></li>
             </ul>
           </div>
@@ -262,5 +300,44 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: 'ease-out',
+          once: true
+        });
+
+        // Holographic and Hover Effect for Service Cards
+        $('.service-card').on('mousemove', function(e) {
+          var $card = $(this);
+          var $layer = $card.find('.holographic-layer');
+          var $inner = $card.find('.service-card-inner');
+          var rect = $card[0].getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          var xPercent = (x / rect.width) * 100;
+          var yPercent = (y / rect.height) * 100;
+
+          // Holographic gradient movement
+          $layer.css('background-position', `${xPercent}% ${yPercent}%`);
+
+          // 3D rotation based on mouse position
+          var rotateX = (y / rect.height - 0.5) * 10; // Max 5deg rotation
+          var rotateY = (x / rect.width - 0.5) * -10; // Max 5deg rotation
+          $inner.css('transform', `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+        });
+
+        $('.service-card').on('mouseleave', function() {
+          var $layer = $(this).find('.holographic-layer');
+          var $inner = $(this).find('.service-card-inner');
+          $layer.css('background-position', '50% 50%');
+          $inner.css('transform', 'rotateX(0deg) rotateY(0deg)');
+        });
+      });
+    </script>
   </body>
 </html>

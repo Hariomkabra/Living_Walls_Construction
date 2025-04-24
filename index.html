@@ -42,9 +42,19 @@
                       <li class="nav-item">
                           <a class="nav-link active" href="index.html">Home</a>
                       </li>
-                      <li class="nav-item">
-                          <a class="nav-link linkred" href="services.html" id="dropdown04"><span>Services</span></a>
+
+                      <li class="nav-item dropdown">
+                        <a class="nav-link linkred dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Services</span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                          <a class="dropdown-item" href="service-details.html?srtype=MW">Maintenance Work</a>
+                          <a class="dropdown-item" href="service-details.html?srtype=LC">Labour Contracting</a>
+                          <a class="dropdown-item" href="service-details.html?srtype=3D">3D Designing</a>
+                          <a class="dropdown-item" href="service-details.html?srtype=HR">House Renovation</a>
+                          <a class="dropdown-item" href="service-details.html?srtype=FR">Flooring & Roofing</a>
+                          <a class="dropdown-item" href="service-details.html?srtype=GC" >General Contracting</a>
+                        </div>
                       </li>
+
                       <li class="nav-item">
                           <a class="nav-link linkred" href="works.html"><span>Projects</span></a>
                       </li>
@@ -322,6 +332,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Recent Projects -->
     
     <section class="section border-t">
       <div class="container">
@@ -329,94 +341,304 @@
           <div class="col-md-8 text-center">
             <h2 class="text-uppercase heading border-bottom mb-4">Recent Projects</h2>
             <p class="mb-3 lead">
-              Smart and efficient internal design to meet with your needs still keeping the cost within your reach. The company has the goodwill and reputation for quality, cost effectiveness, timely delivery.</p>
-            <p><a href="works.html" class="btn btn-primary">See All Projects</a></p>
+              Smart and efficient internal design to meet your needs, while keeping costs within reach. We have a reputation for quality, cost-effectiveness, and timely delivery.
+            </p>
           </div>
         </div>
-
-        <div class="row no-gutters">
-          <div class="col-md-4 element-animate">
+        <div class="project-carousel">
+          <div class="project-carousel-item">
             <a href="works-single.html?prtype=vs1" class="link-thumbnail">
-              <h3>General Construction Building</h3>
-              <span class="ion-plus icon"></span>
-              <img src="Projects/vs1/1.jpeg" alt="Image placeholder" class="img-fluid">
-            </a>
+            <div class="project-card" data-project-id="1">
+              <div class="project-images">
+                <img src="Projects/vs1/1.jpeg" alt="3D Render">
+                <img src="Projects/vs1/2.jpeg" alt="After Construction">
+              </a>
+              </div>
+              <h3 class="project-title">CRN6827</h3>
+              <p class="project-location">Rajarajeshwari Nagar, Bengaluru</p>
+            </div>
           </div>
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html?prtype=sm1" class="link-thumbnail">
-              <h3>General Construction Building</h3>
-              <span class="ion-plus icon"></span>
-              <img src="Projects/sm1/1.jpeg" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="works-single.html?prtype=ps1" class="link-thumbnail">
-              <h3>General Construction Building</h3>
-              <span class="ion-plus icon"></span>
-              <img src="Projects/ps1/1.jpg" alt="Image placeholder" class="img-fluid">
-            </a>
-          </div>
-         
 
+          <div class="project-carousel-item">
+            <div class="project-card" data-project-id="2">
+              <a href="works-single.html?prtype=sm1" class="link-thumbnail">
+              <div class="project-images">
+                <img src="Projects/sm1/1.jpeg" alt="3D Render">
+                <img src="Projects/sm1/2.jpeg" alt="After Construction">
+              </a>
+              </div>
+              <h3 class="project-title">CRN495</h3>
+              <p class="project-location">Bannerghatta Main Road, Bengaluru</p>
+            </div>
+          </div>
+
+          <div class="project-carousel-item">
+            <div class="project-card" data-project-id="3">
+              <a href="works-single.html?prtype=ps1" class="link-thumbnail">
+              <div class="project-images">
+                <img src="Projects/ps1/1.jpg" alt="3D Render">
+                <img src="Projects/ps1/2.jpg" alt="After Construction">
+              </a>
+              </div>
+              <h3 class="project-title">CRN1015</h3>
+              <p class="project-location">Jigani, Bengaluru</p>
+            </div>
+          </div>
+
+        <div class="carousel-nav">
+          <div class="carousel-arrow" id="prev-project">←</div>
+          <div class="carousel-arrow" id="next-project">→</div>
         </div>
       </div>
     </section>
-    <!-- END section -->
+    
+  
 
-    <section class="section">
+    <!-- End Recent Projects -->
+
+    <!-- services section -->
+
+    <section class="section bg-light">
       <div class="container">
-
-        <div class="row justify-content-center mb-5 element-animate">
+        <div class="row justify-content-center mb-5" data-aos="fade-up">
           <div class="col-md-8 text-center">
             <h2 class="text-uppercase heading border-bottom mb-4">Services</h2>
             <p class="mb-3 lead">Ideal Homes promise, joy of being home is delivered through our sincere commitment towards eco-friendliness and uncompromising approach towards ultramodern designs. We make sure that your stay with us is as memorable as possible.</p>
           </div>
         </div>
-
+    
         <div class="row mb-5">
-
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-engineer icon"></span>
-              <div class="media-body">
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-engineer icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">Maintenance Work</h3>
                 <p>Additional maintenance works like painting, plumbing etc...</p>
-                <p><a href="service-details.html?srtype=MW" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=MW" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-blueprint icon"></span>
-              <div class="media-body">
+    
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-blueprint icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">House Renovation</h3>
                 <p>Your existing old building can be made new(renovated) with remodelling,...</p>
-                <p><a href="service-details.html?srtype=HR" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=HR" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 col-12 mb-3 element-animate">
-            <div class="media d-block media-feature text-center">
-              <span class="flaticon-crane icon"></span>
-              <div class="media-body">
+    
+          <div class="col-lg-4 col-md-6 col-12 mb-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card text-center">
+              <div class="service-card-inner">
+                <span class="flaticon-crane icon"></span>
+                <div class="holographic-layer"></div>
+              </div>
+              <div class="service-details">
                 <h3 class="mt-0 text-black">General Contracting</h3>
                 <p>Ideal Homes have their strong presence in the arena of Construction...</p>
-                <p><a href="service-details.html?srtype=GC" class="btn btn-outline-primary btn-sm">Read More</a></p>
+                <p><a href="service-details.html?srtype=GC" class="btn btn-outline-primary btn-sm read-more-btn">Read More</a></p>
               </div>
             </div>
           </div>
-
-          
         </div>
-        <!-- END row -->
-        <div class="row justify-content-center element-animate"> 
-          <div class="col-md-4"><p><a href="services.html" class="btn btn-primary btn-block">View All Services</a></p></div>
+        <!-- services section -->
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-4">
+            <p><a href="services.html" class="btn btn-primary btn-block holographic-btn">View All Services</a></p>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- END section -->
+    
+      <!-- Inline Styles for Services Section -->
+      <style>
+        .service-card {
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          background: #fff;
+          perspective: 1000px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        .service-card-inner {
+          position: relative;
+          padding: 2rem;
+          background: #f8f9fa;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 120px;
+        }
+    
+        .service-card-inner .icon {
+          font-size: 3rem;
+          color: #e57373;
+          transition: transform 0.3s ease;
+        }
+    
+        .service-card:hover .icon {
+          transform: scale(1.1);
+        }
+    
+        .holographic-layer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            45deg,
+            rgba(229, 115, 115, 0.2),
+            rgba(255, 255, 255, 0.3),
+            rgba(229, 115, 115, 0.2)
+          );
+          background-size: 200% 200%;
+          opacity: 0.5;
+          pointer-events: none;
+          transition: background-position 0.1s ease, opacity 0.3s ease;
+        }
+    
+        .service-card:hover .holographic-layer {
+          opacity: 0.7;
+        }
+    
+        .service-details {
+          padding: 1.5rem;
+          background: #fff;
+        }
+    
+        .service-details h3 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-bottom: 0.75rem;
+          transition: color 0.3s ease;
+        }
+    
+        .service-card:hover h3 {
+          color: #e57373;
+        }
+    
+        .service-details p {
+          font-size: 0.9rem;
+          color: #555;
+          margin-bottom: 1rem;
+        }
+    
+        .read-more-btn {
+          border-color: #e57373;
+          color: #e57373;
+          transition: all 0.3s ease;
+        }
+    
+        .read-more-btn:hover {
+          background-color: #e57373;
+          color: #fff;
+          animation: pulse 1s infinite;
+        }
+    
+        @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); }
+        }
+    
+        .holographic-btn {
+          position: relative;
+          background: #fff;
+          color: #e57373;
+          border: 2px solid transparent;
+          border-image: linear-gradient(45deg, rgba(229, 115, 115, 0.5), rgba(255, 255, 255, 0.5), rgba(229, 115, 115, 0.5)) 1;
+          transition: all 0.3s ease;
+          overflow: hidden;
+        }
+    
+        .holographic-btn:hover {
+          background: #e57373;
+          color: #fff;
+          border-image: none;
+          box-shadow: 0 4px 12px rgba(229, 115, 115, 0.3);
+        }
+    
+        .holographic-btn::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
+          transition: left 0.5s ease;
+        }
+    
+        .holographic-btn:hover::after {
+          left: 100%;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 576px) {
+          .service-card-inner {
+            height: 100px;
+          }
+          .service-card-inner .icon {
+            font-size: 2.5rem;
+          }
+          .service-details h3 {
+            font-size: 1.3rem;
+          }
+        }
+      </style>
+    
+      <!-- Inline JavaScript for Holographic and Hover Effects -->
+      <script>
+        $(document).ready(function () {
+          $('.service-card').on('mousemove', function(e) {
+            var $card = $(this);
+            var $layer = $card.find('.holographic-layer');
+            var $inner = $card.find('.service-card-inner');
+            var rect = $card[0].getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            var xPercent = (x / rect.width) * 100;
+            var yPercent = (y / rect.height) * 100;
+    
+            // Holographic gradient movement
+            $layer.css('background-position', `${xPercent}% ${yPercent}%`);
+    
+            // 3D rotation based on mouse position
+            var rotateX = (y / rect.height - 0.5) * 10; // Max 5deg rotation
+            var rotateY = (x / rect.width - 0.5) * -10; // Max 5deg rotation
+            $inner.css('transform', `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+          });
+    
+          $('.service-card').on('mouseleave', function() {
+            var $layer = $(this).find('.holographic-layer');
+            var $inner = $(this).find('.service-card-inner');
+            $layer.css('background-position', '50% 50%');
+            $inner.css('transform', 'rotateX(0deg) rotateY(0deg)');
+          });
+        });
+      </script>
+    <!-- END services section -->
 
     <!--<section class="container cta-overlap">
       <div class="text d-flex">
