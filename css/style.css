@@ -823,6 +823,191 @@ header {
   }
    /*End Recent Projects */
 
+
+   /*Inline Styles for Services Section */
+   
+     .service-card {
+       position: relative;
+       border-radius: 8px;
+       overflow: hidden;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+       background: #fff;
+       perspective: 1000px;
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+ 
+     .service-card:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+     }
+ 
+     .service-card-inner {
+       position: relative;
+       padding: 2rem;
+       background: #f8f9fa;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 120px;
+     }
+ 
+     .service-card-inner .icon {
+       font-size: 3rem;
+       color: #e57373;
+       transition: transform 0.3s ease;
+     }
+ 
+     .service-card:hover .icon {
+       transform: scale(1.1);
+     }
+ 
+     .holographic-layer {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: linear-gradient(
+         45deg,
+         rgba(229, 115, 115, 0.2),
+         rgba(255, 255, 255, 0.3),
+         rgba(229, 115, 115, 0.2)
+       );
+       background-size: 200% 200%;
+       opacity: 0.5;
+       pointer-events: none;
+       transition: background-position 0.1s ease, opacity 0.3s ease;
+     }
+ 
+     .service-card:hover .holographic-layer {
+       opacity: 0.7;
+     }
+ 
+     .service-details {
+       padding: 1.5rem;
+       background: #fff;
+     }
+ 
+     .service-details h3 {
+       font-size: 1.5rem;
+       font-weight: 700;
+       margin-bottom: 0.75rem;
+       transition: color 0.3s ease;
+     }
+ 
+     .service-card:hover h3 {
+       color: #e57373;
+     }
+ 
+     .service-details p {
+       font-size: 0.9rem;
+       color: #555;
+       margin-bottom: 1rem;
+     }
+ 
+     .read-more-btn {
+       border-color: #e57373;
+       color: #e57373;
+       transition: all 0.3s ease;
+     }
+ 
+     .read-more-btn:hover {
+       background-color: #e57373;
+       color: #fff;
+       animation: pulse 1s infinite;
+     }
+ 
+     @keyframes pulse {
+       0% { transform: scale(1); }
+       50% { transform: scale(1.05); }
+       100% { transform: scale(1); }
+     }
+ 
+     .holographic-btn {
+       position: relative;
+       background: #fff;
+       color: #e57373;
+       border: 2px solid transparent;
+       border-image: linear-gradient(45deg, rgba(229, 115, 115, 0.5), rgba(255, 255, 255, 0.5), rgba(229, 115, 115, 0.5)) 1;
+       transition: all 0.3s ease;
+       overflow: hidden;
+     }
+ 
+     .holographic-btn:hover {
+       background: #e57373;
+       color: #fff;
+       border-image: none;
+       box-shadow: 0 4px 12px rgba(229, 115, 115, 0.3);
+     }
+ 
+     .holographic-btn::after {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: -100%;
+       width: 100%;
+       height: 100%;
+       background: linear-gradient(
+         90deg,
+         transparent,
+         rgba(255, 255, 255, 0.2),
+         transparent
+       );
+       transition: left 0.5s ease;
+     }
+ 
+     .holographic-btn:hover::after {
+       left: 100%;
+     }
+ 
+     /* Responsive Design */
+     @media (max-width: 576px) {
+       .service-card-inner {
+         height: 100px;
+       }
+       .service-card-inner .icon {
+         font-size: 2.5rem;
+       }
+       .service-details h3 {
+         font-size: 1.3rem;
+       }
+     }
+     
+     /*End section button effect  */
+
+
+
+/*pricing-packages */
+.holographic-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.holographic-card:hover {
+  transform: translateY(-5px);
+}
+.holographic-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  background-size: 200% 200%;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: background-position 0.3s ease;
+}
+
+/*End pricing-packages */
+
+
+   
      /*Inline Styles for Services Section*/
 
    .service-card {

@@ -459,155 +459,8 @@
         </div>
       </div>
     
-      <!-- Inline Styles for Services Section -->
-      <style>
-        .service-card {
-          position: relative;
-          border-radius: 8px;
-          overflow: hidden;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          background: #fff;
-          perspective: 1000px;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
     
-        .service-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-    
-        .service-card-inner {
-          position: relative;
-          padding: 2rem;
-          background: #f8f9fa;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 120px;
-        }
-    
-        .service-card-inner .icon {
-          font-size: 3rem;
-          color: #e57373;
-          transition: transform 0.3s ease;
-        }
-    
-        .service-card:hover .icon {
-          transform: scale(1.1);
-        }
-    
-        .holographic-layer {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            45deg,
-            rgba(229, 115, 115, 0.2),
-            rgba(255, 255, 255, 0.3),
-            rgba(229, 115, 115, 0.2)
-          );
-          background-size: 200% 200%;
-          opacity: 0.5;
-          pointer-events: none;
-          transition: background-position 0.1s ease, opacity 0.3s ease;
-        }
-    
-        .service-card:hover .holographic-layer {
-          opacity: 0.7;
-        }
-    
-        .service-details {
-          padding: 1.5rem;
-          background: #fff;
-        }
-    
-        .service-details h3 {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin-bottom: 0.75rem;
-          transition: color 0.3s ease;
-        }
-    
-        .service-card:hover h3 {
-          color: #e57373;
-        }
-    
-        .service-details p {
-          font-size: 0.9rem;
-          color: #555;
-          margin-bottom: 1rem;
-        }
-    
-        .read-more-btn {
-          border-color: #e57373;
-          color: #e57373;
-          transition: all 0.3s ease;
-        }
-    
-        .read-more-btn:hover {
-          background-color: #e57373;
-          color: #fff;
-          animation: pulse 1s infinite;
-        }
-    
-        @keyframes pulse {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-          100% { transform: scale(1); }
-        }
-    
-        .holographic-btn {
-          position: relative;
-          background: #fff;
-          color: #e57373;
-          border: 2px solid transparent;
-          border-image: linear-gradient(45deg, rgba(229, 115, 115, 0.5), rgba(255, 255, 255, 0.5), rgba(229, 115, 115, 0.5)) 1;
-          transition: all 0.3s ease;
-          overflow: hidden;
-        }
-    
-        .holographic-btn:hover {
-          background: #e57373;
-          color: #fff;
-          border-image: none;
-          box-shadow: 0 4px 12px rgba(229, 115, 115, 0.3);
-        }
-    
-        .holographic-btn::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-          );
-          transition: left 0.5s ease;
-        }
-    
-        .holographic-btn:hover::after {
-          left: 100%;
-        }
-    
-        /* Responsive Design */
-        @media (max-width: 576px) {
-          .service-card-inner {
-            height: 100px;
-          }
-          .service-card-inner .icon {
-            font-size: 2.5rem;
-          }
-          .service-details h3 {
-            font-size: 1.3rem;
-          }
-        }
-      </style>
+     
     
       <!-- Inline JavaScript for Holographic and Hover Effects -->
       <script>
@@ -639,6 +492,119 @@
           });
         });
       </script>
+
+      <!--pricing-packages.-->
+
+      <section class="section bg-light" id="pricing-packages">
+        <div class="container">
+          <div class="row justify-content-center mb-5" data-aos="fade-up">
+            <div class="col-md-8 text-center">
+              <h2 class="text-uppercase heading border-bottom mb-4">Complete Floor Plan Packages</h2>
+              <p class="mb-3 lead">Choose the perfect package to bring your dream floor plan to life with our expert design services.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card h-100 text-center border-0 shadow-sm holographic-card" style="background-color: #e0e0e0;">
+                <div class="holographic-layer"></div>
+                <div class="card-header bg-transparent text-dark font-weight-bold">Silver Package</div>
+                <div class="card-body">
+                  <h5 class="card-title text-muted">Package Includes</h5>
+                  <ul class="list-unstyled">
+                    <li>Floor plans</li>
+                    <li>Floor plan changes</li>
+                    <li>2D Interior Layout</li>
+                    <li>Final Plan</li>
+                    <li>3D Elevation</li>
+                  </ul>
+                  <p class="mt-4">
+                    INR 40,000/- (for 30x40) (G + 3)<br>
+                    INR 50,000/- (for 40x60) (G + 3)<br>
+                    <small class="text-muted">Approximately</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="card h-100 text-center border-0 shadow-sm holographic-card" style="background-color: #ffca28; color: #fff;">
+                <div class="holographic-layer"></div>
+                <div class="card-header bg-transparent text-white font-weight-bold">Gold Package</div>
+                <div class="card-body">
+                  <h5 class="card-title text-white">Package Includes</h5>
+                  <ul class="list-unstyled">
+                    <li>Floor plans</li>
+                    <li>2D Interior Layout</li>
+                    <li>3D Elevation</li>
+                    <li>Electrical Drawing</li>
+                    <li>Plumbing Drawing</li>
+                    <li>Architectural Drawing</li>
+                    <li>Structural Drawing</li>
+                    <li>Building Estimation</li>
+                  </ul>
+                  <p class="mt-4">
+                    INR 80,000/- (for 30x40) (G + 3)<br>
+                    INR 1,10,000/- (for 40x60) (G + 3)<br>
+                    <small class="text-muted">Approximately</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="card h-100 text-center border-0 shadow-sm holographic-card" style="background-color: #00bcd4; color: #fff;">
+                <div class="holographic-layer"></div>
+                <div class="card-header bg-transparent text-white font-weight-bold">Diamond Package</div>
+                <div class="card-body">
+                  <h5 class="card-title text-white">Package Includes</h5>
+                  <ul class="list-unstyled">
+                    <li>Floor plans</li>
+                    <li>2D Interior Layout</li>
+                    <li>3D Elevation</li>
+                    <li>Electrical Drawing</li>
+                    <li>Plumbing Drawing</li>
+                    <li>Architectural Drawing</li>
+                    <li>Structural Drawing</li>
+                    <li>Building Estimation</li>
+                    <li>Structural Site Visit</li>
+                    <li>Coordination with Contractor</li>
+                    <li>Supervision until Completion</li>
+                  </ul>
+                  <p class="mt-4">
+                    INR 1,50,000/- (for 30x40) (G + 3)<br>
+                    INR 1,90,000/- (for 40x60) (G + 3)<br>
+                    <small class="text-muted">Approximately</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+     
+      <script>
+        $(document).ready(function () {
+          $('.holographic-card').on('mousemove', function(e) {
+            var $card = $(this);
+            var $layer = $card.find('.holographic-layer');
+            var rect = $card[0].getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            var xPercent = (x / rect.width) * 100;
+            var yPercent = (y / rect.height) * 100;
+            $layer.css('background-position', `${xPercent}% ${yPercent}%`);
+            var rotateX = (y / rect.height - 0.5) * 10;
+            var rotateY = (x / rect.width - 0.5) * -10;
+            $card.css('transform', `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+          });
+      
+          $('.holographic-card').on('mouseleave', function() {
+            var $layer = $(this).find('.holographic-layer');
+            $layer.css('background-position', '50% 50%');
+            $(this).css('transform', 'rotateX(0deg) rotateY(0deg)');
+          });
+        });
+      </script>
+        <!--End pricing-packages.-->
+
     <!-- END services section -->
 
     <!--<section class="container cta-overlap">
