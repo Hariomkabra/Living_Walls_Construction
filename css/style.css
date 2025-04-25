@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5 {
     
     .input-area button {
       padding: 8px 12px;
-      background-color: #007bff;
+      background-color: #ff2600;
       color: white;
       border: none;
       border-radius: 0 5px 5px 0;
@@ -253,7 +253,7 @@ h1, h2, h3, h4, h5 {
     }
     
     .input-area button:hover {
-      background-color: #0056b3;
+      background-color: #ea1f25;
     }
     /* End Chatbot with WhatsApp Fallback*/
 
@@ -347,16 +347,16 @@ header {
       position: relative;
       margin-top: -10px; }
       header .navbar .dropdown-menu .dropdown-item:hover {
-        background: #007bff;
+        background: #e51b1b ;
         color: #fff; }
       header .navbar .dropdown-menu .dropdown-item.active {
-        background: #007bff;
+        background: #ea1f25 ;
         color: #fff; }
       header .navbar .dropdown-menu a {
         padding-top: 7px;
         padding-bottom: 7px; }
     header .navbar .cta-btn a {
-      background: #007bff;
+      background: #ea1f25 ;
       color: #000 !important;
       padding-left: 20px !important;
       padding-right: 20px !important;
@@ -435,7 +435,7 @@ header {
 
   .consultation-card h4 i {
     margin-right: 10px;
-    color: #ff5722;
+    color: #ea1f25;
   }
 
   .consultation-card input,
@@ -449,7 +449,7 @@ header {
   }
 
   .consultation-card .btn {
-    background-color: #ff5722;
+    background-color:  #ea1f25;
     color: white;
     padding: 10px;
     border: none;
@@ -1111,7 +1111,7 @@ header {
   padding: 7em 0; }
 
 .cta-link {
-  background: #007bff;
+  background: #ea1f25;
   padding: 3.5em 0 3em 0;
   display: block;
   text-align: center; }
@@ -1130,7 +1130,7 @@ header {
       .cta-link .heading {
         font-size: 30px; } }
   .cta-link:hover {
-    background: #006fe6; }
+    background: #ea1f25; }
 
 .cover_1 {
   background-size: cover;
@@ -1314,8 +1314,8 @@ header {
 }
 
 .footer-social a:hover {
-    background: #ff5722; /* Orange hover background */
-    border-color: #ff5722;
+    background: #ea1f25; /* Orange hover background */
+    border-color: #ea1f25;
     color: #fff;
 }
 
@@ -1605,7 +1605,7 @@ header {
     transition: color 0.3s ease;
   }
   .text-container:hover h2 {
-    color: #e57373;
+    color: #ea1f25;
   }
   .text-container p {
     font-size: 0.9rem;
