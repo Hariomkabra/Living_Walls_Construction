@@ -1006,6 +1006,107 @@ header {
 
 /*End pricing-packages */
 
+/* Contact page/Consulting*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+}
+.section {
+  padding: 60px 0;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+.form-control:focus {
+  border-color: #ea1f25:
+  box-shadow: none;
+}
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.toggle-switch input {
+  display: none;
+}
+.toggle-switch label {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.toggle-switch label::after {
+  content: '';
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+.toggle-switch input:checked + label {
+  background-color: #28a745;
+}
+.toggle-switch input:checked + label::after {
+  transform: translateX(25px);
+}
+.btn-consult {
+  background-color: #ea1f25;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+.btn-consult:hover {
+  background-color: #ea1f25;
+}
+.terms-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+}
+.terms-text a {
+  color: #ea1f25;
+  text-decoration: none;
+}
+.contact-info p {
+  color: #666;
+}
+.contact-info a {
+  color: #e57373;
+  text-decoration: none;
+}
+
+     /* End Contact page/Consulting*/
 
    
      /*Inline Styles for Services Section*/

@@ -21,6 +21,9 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 
 
   </head>
@@ -99,50 +102,43 @@
       </section>
  
 
-      
-    <section class="section">
+    </head>
+    <body>
+      <section class="section">
         <div class="container">
           <div class="row">
             <div class="col-md-7" data-aos="fade-right">
-              <h2 class="text-uppercase heading mb-4">Get in Touch</h2>
-              <p>We're here to help you bring your dream floor plan to life. Fill out the form below, and our team will reach out to discuss your project.</p>
-              <form action="#" method="post" id="contactForm">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <label for="fname">First Name</label>
-                    <input type="text" class="form-control form-control-lg" id="fname" required>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="lname">Last Name</label>
-                    <input type="text" class="form-control form-control-lg" id="lname" required>
-                  </div>
+              <h2 class="text-uppercase heading mb-4">Consult With Our Home Design Experts</h2>
+              <div class="form-container">
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="name" placeholder="Name" required>
                 </div>
-                <div class="row">
-                  <div class="col-md-12 form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control form-control-lg" required>
-                  </div>
+                <div class="form-group">
+                  <input type="tel" class="form-control form-control-lg" id="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required>
                 </div>
-                <div class="row">
-                  <div class="col-md-12 form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" class="form-control form-control-lg" pattern="[0-9]{10}" placeholder="e.g., 7000000000" required>
-                  </div>
+                <div class="toggle-switch">
+                  <span>You can reach me on WhatsApp</span>
+                  <input type="checkbox" id="whatsapp">
+                  <label for="whatsapp"></label>
                 </div>
-                <div class="row">
-                  <div class="col-md-12 form-group">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" class="form-control form-control-lg" cols="30" rows="8" placeholder="Tell us about your floor plan project..." required></textarea>
-                  </div>
+                <div class="form-group">
+                  <span style="font-size: 0.9rem; color: #666;">Get notified about upcoming design meetings and offers</span>
                 </div>
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="submit" value="Send Message" class="btn btn-primary btn-lg btn-block">
-                  </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-lg" id="email" placeholder="Email" required>
                 </div>
-              </form>
-              <div class="quick-cta">
-                <p>Need a quick response? <a href="tel:+917000000000">Call us at +91 70000 00000</a></p>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="city" placeholder="City" required>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control form-control-lg" id="requirement" placeholder="Requirement" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                  <button class="btn-consult" onclick="handleConsultation()">Book Online Consultation</button>
+                </div>
+                <div class="terms-text">
+                  By submitting, you agree to the <a href="#">Privacy Policy & Terms And Conditions</a>
+                </div>
               </div>
             </div>
             <div class="col-md-1"></div>
@@ -150,19 +146,39 @@
               <div class="contact-info">
                 <h5 class="text-uppercase mb-3"><i class="fas fa-map-marker-alt mr-2"></i>Address</h5>
                 <p class="mb-5">Test Address, <br> P.P 23/467, <br> Anathapur - 695020</p>
-                
                 <h5 class="text-uppercase mb-3"><i class="fas fa-envelope mr-2"></i>Email Us At</h5>
                 <p class="mb-5"><a href="mailto:livingwalls@gmail.com">livingwalls@gmail.com</a></p>
-                
                 <h5 class="text-uppercase mb-3"><i class="fas fa-phone mr-2"></i>Call Us</h5>
                 <p class="mb-5">Phone: <a href="tel:+917000000000">+91 70000 00000</a> <br> Mobile: <a href="tel:+917000000000">+91 70000 00000</a></p>
-  
-                
               </div>
             </div>
           </div>
         </div>
       </section>
+    
+      <script>
+        function handleConsultation() {
+          const name = document.getElementById('name').value;
+          const mobile = document.getElementById('mobile').value;
+          const whatsapp = document.getElementById('whatsapp').checked;
+          const email = document.getElementById('email').value;
+          const city = document.getElementById('city').value;
+          const requirement = document.getElementById('requirement').value;
+    
+          if (name && mobile && email && city && requirement) {
+            alert('Consultation booked successfully! We will reach out to you soon.');
+            // Reset form
+            document.getElementById('name').value = '';
+            document.getElementById('mobile').value = '';
+            document.getElementById('whatsapp').checked = false;
+            document.getElementById('email').value = '';
+            document.getElementById('city').value = '';
+            document.getElementById('requirement').value = '';
+          } else {
+            alert('Please fill in all required fields.');
+          }
+        }
+      </script>
     
 
 
