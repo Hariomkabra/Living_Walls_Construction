@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5 {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background-color: #007bff;
+      background-color: #ea1f25; /* Red for icon */
       color: white;
       font-size: 30px;
       display: flex;
@@ -121,105 +121,146 @@ h1, h2, h3, h4, h5 {
     }
     
     .chat-icon:hover {
-      background-color: #0056b3;
+      background-color: #c9181f; /* Darker red on hover */
     }
     
     .chat-window {
       background-color: white;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      width: 300px;
-      max-height: 400px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 320px;
+      max-height: 500px;
       overflow-y: auto;
       display: none;
       flex-direction: column;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
     
     .chat-header {
       padding: 10px;
-      background-color: #f0f0f0;
-      border-bottom: 1px solid #ccc;
+      background-color: #ea1f25; /* Red header */
+      color: white;
+      border-bottom: 1px solid #ddd;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       font-weight: bold;
-      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .chat-header .close-btn {
+      cursor: pointer;
+      font-size: 1.2em;
+      color: white;
+    }
+    
+    .chat-header .close-btn:hover {
+      color: #ff4444; /* Lighter red for close button hover */
     }
     
     .chat-messages {
       flex-grow: 1;
-      padding: 10px;
+      padding: 15px;
       overflow-y: auto;
     }
     
     .message {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       display: flex;
       flex-direction: column;
+      animation: fadeIn 0.3s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     
     .sender {
       font-size: 0.9em;
-      color: #888;
+      color: #555;
+      margin-bottom: 5px;
     }
     
     .user .message-content {
-      background-color: #e0f7fa;
-      border-radius: 5px;
-      padding: 10px;
+      background-color: #ffebee; /* Light red background for user messages */
+      border-radius: 10px;
+      padding: 12px;
       margin-left: auto;
       margin-right: 0;
-      max-width: 80%;
+      max-width: 75%;
       text-align: right;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     
     .bot .message-content {
-      background-color: #f0f0f0;
-      border-radius: 5px;
-      padding: 10px;
+      background-color: #fff3f3; /* Very light red for bot messages */
+      border-radius: 10px;
+      padding: 12px;
       margin-left: 0;
       margin-right: auto;
-      max-width: 80%;
+      max-width: 75%;
       text-align: left;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .bot.typing .message-content::after {
+      content: "Typing...";
+      color: #888;
+      font-style: italic;
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      50% { opacity: 0; }
     }
     
     .message-options {
       display: flex;
       flex-direction: column;
       margin-top: 10px;
+      gap: 5px;
     }
     
     .option-button {
-      padding: 8px 12px;
-      background-color: #4CAF50;
+      padding: 10px 15px;
+      background-color: #f56c71; /* Red buttons */
       color: white;
       border: none;
       border-radius: 5px;
-      margin-bottom: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      width: fit-content;
+      width: 100%;
+      text-align: left;
     }
     
     .option-button:hover {
-      background-color: #45a049;
+      background-color: #c9181f; /* Darker red on hover */
     }
     
     .whatsapp-fallback {
       margin-top: 10px;
       padding: 10px;
-      background-color: #f8f8f8;
-      border-top: 1px solid #ccc;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
       text-align: center;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
+      font-size: 0.9em;
     }
     
     .whatsapp-link {
       display: inline-flex;
       align-items: center;
-      color: #25d366;
+      color: #25d366; /* Red for WhatsApp link */
       text-decoration: none;
       font-weight: bold;
     }
@@ -233,33 +274,50 @@ h1, h2, h3, h4, h5 {
     .input-area {
       display: flex;
       margin-top: 10px;
+      gap: 5px;
     }
     
     .input-area input {
       flex: 1;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px 0 0 5px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
     }
     
     .input-area button {
-      padding: 8px 12px;
-      background-color: #ff2600;
+      padding: 10px 15px;
+      background-color: #ff2600; /* Red send button */
       color: white;
       border: none;
-      border-radius: 0 5px 5px 0;
+      border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
     }
     
     .input-area button:hover {
-      background-color: #ea1f25;
+      background-color: #ea1f25; /* Darker red on hover */
+    }
+    
+    .input-area button::after {
+      content: "✈";
+      font-size: 1.2em;
+      margin-left: 5px;
+    }
+    
+    @media (max-width: 600px) {
+      .chat-window {
+        width: 90%;
+        left: 5%;
+      }
     }
     /* End Chatbot with WhatsApp Fallback*/
 
 /* Header */
 header .navbar {
-  padding-top: 0.3rem;  /* reduced from 0.5rem or more */
+  padding-top: 0.3rem;  /* reduced  */
   padding-bottom: 0.3rem;
   background: white !important;
 }
@@ -887,11 +945,20 @@ header .navbar .nav-link {
 .holographic-card {
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  background-color: #fff; /* Clean white background for better contrast */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Light border for definition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  cursor: pointer; /* Indicate interactivity */
+  padding: 20px; /* Padding for content */
 }
+
 .holographic-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02); /* Add slight scale on hover for a pop effect */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
+
 .holographic-layer {
   position: absolute;
   top: 0;
@@ -901,13 +968,17 @@ header .navbar .nav-link {
   background: linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.1),
+    rgba(255, 0, 0, 0.2), /* Added a hint of red to tie into your site’s theme */
     rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.1)
+    rgba(255, 0, 0, 0.1)
   );
-  background-size: 200% 200%;
-  opacity: 0.5;
-  pointer-events: none;
-  transition: background-position 0.3s ease;
+
+}
+
+@media (max-width: 600px) {
+  .holographic-card {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
 }
 
 /*End pricing-packages */

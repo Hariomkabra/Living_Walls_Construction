@@ -102,18 +102,18 @@
             <div class="chat-messages">
               <div class="message bot">
                 <span class="sender">Bot:</span>
-                <div class="message-content">Hello! How can I assist you today?</div>
+                <div class="message-content">Hello! How can I assist you today with your floor plan needs?</div>
               </div>
             </div>
             <div class="message-options">
-              <button class="option-button" data-option="option1">What services do you offer?</button>
-              <button class="option-button" data-option="option2">How much does it cost?</button>
-              <button class="option-button" data-option="option3">Where are you located?</button>
-              <button class="option-button" data-option="option4">Do you have 24/7 support?</button>
-              <button class="option-button" data-option="option5">Other question</button>
+              <button class="option-button" data-option="option1">What floor plan services do you offer?</button>
+              <button class="option-button" data-option="option2">How much do floor plans cost?</button>
+              <button class="option-button" data-option="option3">Where can I get floor plans?</button>
+              <button class="option-button" data-option="option4">Do you offer 24/7 support for floor plans?</button>
+              <button class="option-button" data-option="option5">Other question about floor plans</button>
             </div>
             <div class="input-area" style="display:none;">
-              <input type="text" placeholder="Type your question..." />
+              <input type="text" placeholder="Type your question about floor plans..." />
               <button id="send-button">Send</button>
             </div>
             <div class="whatsapp-fallback">
@@ -142,11 +142,11 @@
         let isChatOpen = false;
         let currentQuestion = 0;
         const questions = [
-          "What services do you offer?",
-          "How much does it cost?",
-          "Where are you located?",
-          "Do you have 24/7 support?",
-          "Other question"
+          "What floor plan services do you offer?",
+          "How much do floor plans cost?",
+          "Where can I get floor plans?",
+          "Do you offer 24/7 support for floor plans?",
+          "Other question about floor plans"
         ];
         
         chatIconContainer.addEventListener("click", () => {
@@ -172,19 +172,19 @@
         
             switch (option) {
               case "option1":
-                response = "We offer house construction services.";
+                response = "We offer custom floor plan design, 2D/3D modeling, and home layout customization services.";
                 break;
               case "option2":
-                response = "Cost varies depending on the project.  Please provide more details.";
+                response = "Floor plan costs depend on size and customization. Please provide details for a personalized quote.";
                 break;
               case "option3":
-                response = "We operate in Bengaluru, Chennai, Hyderabad, and Mysuru.";
+                response = "We provide floor plans in Bengaluru, Chennai, Hyderabad, and Mysuru.";
                 break;
-                case "option4":
-                response = "Yes, we have 24/7 support.";
+              case "option4":
+                response = "Yes, we offer 24/7 support to assist with your floor plan queries.";
                 break;
               case "option5":
-                response = "Please type your question below.";
+                response = "Please type your question about floor plans below.";
                 sendButtonArea.style.display = "flex";
                 messageOptions.style.display = "none";
                 return;
@@ -196,7 +196,6 @@
             addMessage("bot", response);
             currentQuestion++;
             if (currentQuestion < questions.length) {
-              // Show the next question
               messageOptions.innerHTML = `<button class="option-button" data-option="option${currentQuestion + 1}">${questions[currentQuestion]}</button>`;
             } else {
               messageOptions.style.display = 'none';
@@ -208,8 +207,7 @@
           const question = textInput.value;
           if (question.trim() !== "") {
             addMessage("user", question);
-            // Here you would add logic to fetch a more detailed answer
-            addMessage("bot", "Thank you!  A customer representative will contact you soon.");
+            addMessage("bot", "Thank you! A floor plan expert will contact you soon with a detailed response.");
             textInput.value = "";
             sendButtonArea.style.display = "none";
             messageOptions.style.display = "flex";
@@ -224,7 +222,6 @@
           chatMessages.scrollTop = chatMessages.scrollHeight;
         }
         </script>
-        
 
    
 
@@ -617,14 +614,14 @@
               <div class="col-lg-3 mb-4 mb-lg-0">
                   <h2 class="footer-heading mb-4 text-white">Site Map</h2>
                   <ul class="list-unstyled">
-                      <li><a href="#" class="text-white-50">Home</a></li>
+                      <li><a href="index.html" class="text-white-50">Home</a></li>
                       <li><a href="#" class="text-white-50">Floor Plan Search</a></li>
                       <li><a href="#" class="text-white-50">Architectural Styles</a></li>
                       <li><a href="#" class="text-white-50">Design Services</a></li>
                       <li><a href="#" class="text-white-50">3D Models</a></li>
                       <li><a href="#" class="text-white-50">Customer Reviews</a></li>
                       <li><a href="about.html" class="text-white-50">About Us</a></li>
-                      <li><a href="#" class="text-white-50">Blog</a></li>
+                     
                       <li><a href="contact.html" class="text-white-50">Contact Us</a></li>
                       <li><a href="#" class="text-white-50">FAQ</a></li>
                   </ul>
@@ -653,7 +650,7 @@
   
                   <div class="mt-5">
                       <h2 class="footer-heading mb-4 text-white">Get in Touch</h2>
-                      <p class="mb-0"><a href="tel:+1234567890" class="text-white-50">+91 76765 23305</a></p>
+                      <p class="mb-0"><a href="tel:+9739011656" class="text-white-50">+91 9739011656</a></p>
                       <p><a href="mailto:info@yourfloorplan.com" class="text-white-50">info@yourfloorplan.com</a></p>
                   </div>
   
@@ -668,22 +665,16 @@
                       </ul>
                   </div>
   
-                  <div class="mt-5">
-                      <h2 class="footer-heading mb-4 text-white">Download Our App</h2>
-                      <p class="">
-                          <a href="#" class="mr-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" height="30"></a>
-                          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Download_on_the_App_Store_RGB_blk.svg/2560px-Download_on_the_App_Store_RGB_blk.svg.png" alt="App Store" height="30"></a>
-                      </p>
-                  </div>
+                  
               </div>
           </div>
           <hr>
   
-          <div class="row pt-5 mt-5 text-center">
+          <div class="row pt-10 mt-10 text-center">
               <div class="col-md-12">
                 <p>
                   Copyright &copy;
-                  <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analyticse</a>
+                  <script>document.write(new Date().getFullYear());</script> All Rights Reserved | Powered by <a href="https://meghplat.com/" target="_blank" class="text-primary">Meghplat Analytics</a>
               </p>
               </div>
               <hr>
