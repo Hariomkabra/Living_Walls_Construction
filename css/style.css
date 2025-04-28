@@ -315,6 +315,8 @@ h1, h2, h3, h4, h5 {
     }
     /* End Chatbot with WhatsApp Fallback*/
 
+    
+
 /* Header */
 header .navbar {
   padding-top: 0.3rem;  /* reduced  */
@@ -783,6 +785,29 @@ header .navbar .nav-link {
   }
    /*End Recent Projects */
 
+    /* quotation-btn */
+
+    /* Default styling for other nav items (Projects, Floor Plans, About, Contact) */
+.nav-item .linkred span {
+  color: #000; /* Default text color for other links */
+  padding: 10px 15px; /* Default padding */
+}
+
+   .quotation-btn {
+    background-color: #ea1f25; /* bright red background */
+    color: white; /* white text */
+    border: none; /* remove the border if needed */
+    border-radius: 4px; /* optional: smooth corners */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quotation-btn:hover {
+    background-color: #c9181f; /* darker red on hover */
+    color: white; /* keep white text on hover */
+  }
+  
+   /* End quotation-btn */
 
    /*Inline Styles for Services Section */
    
