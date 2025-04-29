@@ -963,44 +963,9 @@ header .navbar .nav-link {
 
 
 /*pricing-packages */
-.holographic-card {
-  position: relative;
-  overflow: hidden;
-  background-color: #fff; /* Clean white background for better contrast */
-  border-radius: 10px; /* Rounded corners for a modern look */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Light border for definition */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  cursor: pointer; /* Indicate interactivity */
-  padding: 20px; /* Padding for content */
-}
 
-.holographic-card:hover {
-  transform: translateY(-5px) scale(1.02); /* Add slight scale on hover for a pop effect */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-}
 
-.holographic-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 0, 0, 0.2), /* Added a hint of red to tie into your site’s theme */
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 0, 0, 0.1)
-  );
 
-}
-
-@media (max-width: 600px) {
-  .holographic-card {
-    padding: 15px; /* Reduced padding for smaller screens */
-  }
-}
 
 /*End pricing-packages */
 

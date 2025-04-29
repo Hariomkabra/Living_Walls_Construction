@@ -21,6 +21,14 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
 
+         <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- AOS CSS -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- Font Awesome for Icons -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+
 
 
   </head>
@@ -488,117 +496,235 @@
         });
       </script>
 
-      <!--pricing-packages.-->
-
-      <section class="section bg-light" id="pricing-packages">
-        <div class="container">
-          <div class="row justify-content-center mb-5" data-aos="fade-up">
-            <div class="col-md-8 text-center">
-              <h2 class="text-uppercase heading border-bottom mb-4">Complete Floor Plan Packages</h2>
-              <p class="mb-3 lead">Choose the perfect package to bring your dream floor plan to life with our expert design services.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="card h-100 text-center border-0 shadow-sm holographic-card" style="background-color: #e0e0e0;">
-                <div class="holographic-layer"></div>
-                <div class="card-header bg-transparent text-dark font-weight-bold">Silver Package</div>
-                <div class="card-body">
-                  <h5 class="card-title text-muted">Package Includes</h5>
-                  <ul class="list-unstyled">
-                    <li>Floor plans</li>
-                    <li>Floor plan changes</li>
-                    <li>2D Interior Layout</li>
-                    <li>Final Plan</li>
-                    <li>3D Elevation</li>
-                  </ul>
-                  <p class="mt-4">
-                    INR 40,000/- (for 30x40) (G + 3)<br>
-                    INR 50,000/- (for 40x60) (G + 3)<br>
-                    <small class="text-muted">Approximately</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="card h-100 text-center border-0 shadow-sm holographic-card" style="background-color: #ffca28; color: #fff;">
-                <div class="holographic-layer"></div>
-                <div class="card-header bg-transparent text-white font-weight-bold">Gold Package</div>
-                <div class="card-body">
-                  <h5 class="card-title text-white">Package Includes</h5>
-                  <ul class="list-unstyled">
-                    <li>Floor plans</li>
-                    <li>2D Interior Layout</li>
-                    <li>3D Elevation</li>
-                    <li>Electrical Drawing</li>
-                    <li>Plumbing Drawing</li>
-                    <li>Architectural Drawing</li>
-                    <li>Structural Drawing</li>
-                    <li>Building Estimation</li>
-                  </ul>
-                  <p class="mt-4">
-                    INR 80,000/- (for 30x40) (G + 3)<br>
-                    INR 1,10,000/- (for 40x60) (G + 3)<br>
-                    <small class="text-muted">Approximately</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="card h-100 text-center border-0 shadow-sm holographic-card" style="background-color: #00bcd4; color: #fff;">
-                <div class="holographic-layer"></div>
-                <div class="card-header bg-transparent text-white font-weight-bold">Diamond Package</div>
-                <div class="card-body">
-                  <h5 class="card-title text-white">Package Includes</h5>
-                  <ul class="list-unstyled">
-                    <li>Floor plans</li>
-                    <li>2D Interior Layout</li>
-                    <li>3D Elevation</li>
-                    <li>Electrical Drawing</li>
-                    <li>Plumbing Drawing</li>
-                    <li>Architectural Drawing</li>
-                    <li>Structural Drawing</li>
-                    <li>Building Estimation</li>
-                    <li>Structural Site Visit</li>
-                    <li>Coordination with Contractor</li>
-                    <li>Supervision until Completion</li>
-                  </ul>
-                  <p class="mt-4">
-                    INR 1,50,000/- (for 30x40) (G + 3)<br>
-                    INR 1,90,000/- (for 40x60) (G + 3)<br>
-                    <small class="text-muted">Approximately</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<!--End pricing-packages.-->
+      <style>
+        .card {
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border-radius: 12px;
+          background-color: #fff;
+        }
+        .card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .holographic-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.5));
+          opacity: 0.3;
+          pointer-events: none;
+          transition: background-position 0.1s ease;
+        }
+        .card-header {
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .card-header::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: skewY(-8deg);
+          transform-origin: top left;
+        }
+        .card-header.basic::before { background-color: #3b82f6; }
+        .card-header.business::before { background-color: #1e3a8a; }
+        .card-header.premium::before { background-color: #ef4444; }
+        .card-header h5 {
+          color: #fff;
+          font-weight: 700;
+          text-transform: uppercase;
+          position: relative;
+          z-index: 1;
+        }
+        .feature-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 12px;
+          font-size: 0.95rem;
+        }
+        .feature-item i {
+          color: #ef4444;
+          margin-right: 10px;
+          font-size: 1.1rem;
+        }
+        .price {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #1e3a8a;
+        }
+        .btn-buy {
+          width: 100%;
+          padding: 12px;
+          font-weight: 600;
+          border-radius: 8px;
+          transition: background-color 0.3s ease;
+          border: none; /* Remove default button border */
+          cursor: pointer; /* Add cursor for better UX */
+        }
+        .btn-buy.basic { background-color: #ef4444; }
+        .btn-buy.business { background-color: #ef4444; }
+        .btn-buy.premium { background-color: #ef4444; }
+        .btn-buy:hover {
+          filter: brightness(1.1);
+        }
+        .tooltip-info {
+          cursor: pointer;
+          color: #ef4444;
+          margin-left: 5px;
+        }
+        @media (max-width: 768px) {
+          .card-header {
+            height: 60px;
+          }
+          .price {
+            font-size: 1.75rem;
+          }
+          .feature-item {
+            font-size: 0.9rem;
+          }
+          .btn-buy {
+            padding: 10px;
+          }
+        }
+      </style>
      
-      <script>
-        $(document).ready(function () {
-          $('.holographic-card').on('mousemove', function(e) {
-            var $card = $(this);
-            var $layer = $card.find('.holographic-layer');
-            var rect = $card[0].getBoundingClientRect();
-            var x = e.clientX - rect.left;
-            var y = e.clientY - rect.top;
-            var xPercent = (x / rect.width) * 100;
-            var yPercent = (y / rect.height) * 100;
-            $layer.css('background-position', `${xPercent}% ${yPercent}%`);
-            var rotateX = (y / rect.height - 0.5) * 10;
-            var rotateY = (x / rect.width - 0.5) * -10;
-            $card.css('transform', `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
-          });
+        <section class="section bg-light" id="pricing-packages">
+          <div class="container">
+            <div class="row justify-content-center mb-5" data-aos="fade-up">
+              <div class="col-md-8 text-center">
+                <h2 class="text-uppercase heading border-bottom mb-4">Complete Floor Plan Packages</h2>
+                <p class="mb-3 lead">Choose the perfect package to bring your dream floor plan to life with our expert design services.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 text-center border-0 shadow-sm holographic-card" aria-labelledby="basic-plan">
+                  <div class="card-header basic">
+                    <h5 id="basic-plan">Basic</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Floor Plans</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Floor Plan Changes</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> 2D Interior Layout</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Final Plan</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> 3D Elevation</li>
+                    </ul>
+                    <h3 class="price mt-4">INR 40,000</h3>
+                    <p>(for 30x40) (G + 3)<br>INR 50,000 (for 40x60) (G + 3)<br>
+                      <small class="text-muted">Approximately <i class="fas fa-info-circle tooltip-info" data-bs-toggle="tooltip" title="Pricing may vary based on custom requirements"></i></small>
+                    </p>
+                    <button type="submit" class="btn btn-buy basic" aria-label="Buy Basic Package">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 text-center border-0 shadow-sm holographic-card" aria-labelledby="business-plan">
+                  <div class="card-header business">
+                    <h5 id="business-plan">Business</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Floor Plans</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> 2D Interior Layout</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> 3D Elevation</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Electrical Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Plumbing Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Architectural Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Structural Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Building Estimation</li>
+                    </ul>
+                    <h3 class="price mt-4">INR 80,000</h3>
+                    <p>(for 30x40) (G + 3)<br>INR 1,10,000 (for 40x60) (G + 3)<br>
+                      <small class="text-muted">Approximately <i class="fas fa-info-circle tooltip-info" data-bs-toggle="tooltip" title="Pricing may vary based on custom requirements"></i></small>
+                    </p>
+                    <button type="submit" class="btn btn-buy business" aria-label="Buy Business Package">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 text-center border-0 shadow-sm holographic-card" aria-labelledby="premium-plan">
+                  <div class="card-header premium">
+                    <h5 id="premium-plan">Premium</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Floor Plans</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> 2D Interior Layout</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> 3D Elevation</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Electrical Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Plumbing Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Architectural Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Structural Drawing</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Building Estimation</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Structural Site Visit</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Contractor Coordination</li>
+                      <li class="feature-item"><i class="fas fa-check-circle"></i> Supervision Until Completion</li>
+                    </ul>
+                    <h3 class="price mt-4">INR 1,50,000</h3>
+                    <p>(for 30x40) (G + 3)<br>INR 1,90,000 (for 40x60) (G + 3)<br>
+                      <small class="text-muted">Approximately <i class="fas fa-info-circle tooltip-info" data-bs-toggle="tooltip" title="Pricing may vary based on custom requirements"></i></small>
+                    </p>
+                    <button type="submit" class="btn btn-buy premium" aria-label="Buy Premium Package">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       
-          $('.holographic-card').on('mouseleave', function() {
-            var $layer = $(this).find('.holographic-layer');
-            $layer.css('background-position', '50% 50%');
-            $(this).css('transform', 'rotateX(0deg) rotateY(0deg)');
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          // Initialize AOS
+          AOS.init();
+      
+          // Initialize Bootstrap Tooltips
+          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+          const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+      
+          // Holographic Card Effect
+          $(document).ready(function () {
+            $('.holographic-card').on('mousemove', function(e) {
+              var $card = $(this);
+              var rect = $card[0].getBoundingClientRect();
+              var x = e.clientX - rect.left;
+              var y = e.clientY - rect.top;
+              var xPercent = (x / rect.width) * 100;
+              var yPercent = (y / rect.height) * 100;
+              $card.css('background-position', `${xPercent}% ${yPercent}%`);
+              var rotateX = (y / rect.height - 0.5) * 8;
+              var rotateY = (x / rect.width - 0.5) * -8;
+              $card.css('transform', `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+            });
+      
+            $('.holographic-card').on('mouseleave', function() {
+              $(this).css({
+                'background-position': '50% 50%',
+                'transform': 'rotateX(0deg) rotateY(0deg)'
+              });
+            });
           });
-        });
-      </script>
-        <!--End pricing-packages.-->
+        </script>
+      
+
+
+      
+   <!--End pricing-packages.-->
 
     <!-- END services section -->
 
