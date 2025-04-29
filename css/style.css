@@ -968,7 +968,7 @@ header .navbar .nav-link {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: #ffff;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -1004,11 +1004,11 @@ header .navbar .nav-link {
   transform: skewY(-8deg);
   transform-origin: top left;
 }
-.card-header.basic::before { background-color: #3b82f6; }
+.card-header.basic::before { background-color: #1e3a8a; }
 .card-header.business::before { background-color: #1e3a8a; }
-.card-header.premium::before { background-color: #ef4444; }
+.card-header.premium::before { background-color: #1e3a8a; }
 .card-header h5 {
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
@@ -1039,9 +1039,9 @@ header .navbar .nav-link {
   border: none; /* Remove default button border */
   cursor: pointer; /* Add cursor for better UX */
 }
-.btn-buy.basic { background-color: #ef4444; }
-.btn-buy.business { background-color: #ef4444; }
-.btn-buy.premium { background-color: #ef4444; }
+.btn-buy.basic { background-color: #1e3a8a; }
+.btn-buy.business { background-color: #1e3a8a; }
+.btn-buy.premium { background-color: #1e3a8a; }
 .btn-buy:hover {
   filter: brightness(1.1);
 }
@@ -1068,6 +1068,23 @@ header .navbar .nav-link {
 /*End pricing-packages */
 
 /* Contact page/Consulting*/
+
+
+
+
+.card-header.basic {
+  background-color: #9fc8f1;
+}
+
+.card-header.business {
+  background-color: #889fe9;
+}
+
+.card-header.premium {
+  background-color: #9fc8f1;
+}
+
+
 
 body {
   font-family: Arial, sans-serif;
