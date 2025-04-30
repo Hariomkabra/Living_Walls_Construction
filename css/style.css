@@ -92,6 +92,26 @@ h1, h2, h3, h4, h5 {
 
     /* Chatbot with WhatsApp Fallback*/
 
+
+    .chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Positions the container on the right */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns children (icon and window) to the right */
+    z-index: 1000;
+}
+
+.chat-icon-container {
+    cursor: pointer;
+}
+
+/* Ensure the chat window stays visible when opened */
+.chat-window[style*="display: flex"] {
+    display: flex !important;
+}
+
     .chat-container {
       position: fixed;
       bottom: 80px;
@@ -136,6 +156,16 @@ h1, h2, h3, h4, h5 {
       padding: 10px;
       border: 1px solid #ddd;
       animation: slideIn 0.3s ease-out;
+
+      display: none; /* Hidden by default, as in your JS logic */
+      position: absolute;
+      bottom: 80px; /* Adjust to position above the chat icon */
+      right: 0; /* Aligns the chat window to the right edge */
+      width: 300px; /* Adjust width as needed */
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      flex-direction: column;
     }
     
     @keyframes slideIn {
@@ -318,11 +348,24 @@ h1, h2, h3, h4, h5 {
     
 
 /* Header */
+/* Header */
 header .navbar {
-  padding-top: 0.3rem;  /* reduced  */
+  padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   background: white !important;
 }
+
+header .navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-300%); /* Shift slightly left by adjusting the translation */
+}
+header .navbar-brand img {
+  max-height: 70px; /* Control the logo height */
+  width: 170px; /* Keep aspect ratio */
+  display: block; /* Ensure the image behaves as a block for centering */
+}
+
 
 @media (max-width: 1199.98px) {
   header .navbar {
@@ -330,11 +373,13 @@ header .navbar {
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
   }
-}
 
-header .navbar-brand img {
-  max-height: 60px; /* control the logo height */
-  width: auto; /* keep aspect ratio */
+  header .navbar-brand {
+    position: relative; /* Adjust for mobile if navbar collapses */
+    left: auto;
+    transform: none;
+    text-align: center; /* Center logo on smaller screens */
+  }
 }
 
 /* Optional: Adjust the spacing for links too */
@@ -1082,13 +1127,12 @@ header .navbar .nav-link {
 }
 
 
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f7f6;
 }
 .section {
-  padding: 60px 0;
+  padding: 6px 0;
 }
 .heading {
   font-size: 2rem;
