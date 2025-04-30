@@ -1119,7 +1119,7 @@ main, .site-content {
   opacity: 0.8;
 }
 .card-header.basic::before { background-color: #000800; }
-.card-header.business::before { background-color: #7851a9; }
+.card-header.business::before { background-color: #4e006e; }
 .card-header.premium::before { background-color: #e63939; }
 .card-header h5 {
   color: #ffffff;
@@ -1220,7 +1220,7 @@ main, .site-content {
   background-color: #000800;
 }
 .card-header.business {
-  background-color: #7851a9;
+  background-color: #4e006e;
 }
 .card-header.premium {
   background-color: #e63939;
