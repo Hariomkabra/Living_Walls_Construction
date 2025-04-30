@@ -372,7 +372,7 @@ header .navbar-brand {
 }
 
 header .navbar-brand img {
-  max-height: 65px; /* Updated logo height */
+  max-height: 60px; /* Updated logo height */
   width: 170px; /* Updated logo width */
   display: block; /* Ensure image behaves as a block */
 }
