@@ -1008,28 +1008,56 @@ header .navbar .nav-link {
 
 /*pricing-packages */
 
+/* Pricing Packages */
+
 .card {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
-  background-color: #ffff;
+  background-color: #ffffff; /* Fixed typo from #ffff to #ffffff */
+  animation: fadeInCard 0.5s ease-out forwards; /* Added fade-in on load */
 }
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.02); /* Added subtle scale for hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
 }
-.holographic-card::before {
+.card::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.5));
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: border-color 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.card:hover::after {
+  border-color: rgba(239, 68, 68, 0.5); /* Subtle red glow border on hover (matches feature-item color) */
+}
+.holographic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   opacity: 0.3;
   pointer-events: none;
-  transition: background-position 0.1s ease;
+  transition: left 0.5s ease, opacity 0.3s ease; /* Smooth shimmer effect */
+}
+.holographic-card:hover::before {
+  left: 100%; /* Shimmer moves across card on hover */
+  opacity: 0.5; /* Slightly more visible */
 }
 .card-header {
   height: 70px;
@@ -1038,6 +1066,10 @@ header .navbar .nav-link {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.card-header:hover {
+  transform: scale(1.02);
 }
 .card-header::before {
   content: '';
@@ -1048,52 +1080,79 @@ header .navbar .nav-link {
   height: 100%;
   transform: skewY(-8deg);
   transform-origin: top left;
+  transition: opacity 0.3s ease;
 }
-.card-header.basic::before { background-color: #1e3a8a; }
-.card-header.business::before { background-color: #1e3a8a; }
-.card-header.premium::before { background-color: #1e3a8a; }
+.card-header:hover::before {
+  opacity: 0.8;
+}
+.card-header.basic::before { background-color: #000800; }
+.card-header.business::before { background-color: #7851a9; }
+.card-header.premium::before { background-color: #e63939; }
 .card-header h5 {
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
   z-index: 1;
+  transition: color 0.3s ease;
+}
+.card-header:hover h5 {
+  color: #f0f0f0;
 }
 .feature-item {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
   font-size: 0.95rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.feature-item:hover {
+  transform: translateX(5px);
+  color: #ef4444;
 }
 .feature-item i {
   color: #ef4444;
   margin-right: 10px;
   font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+.feature-item:hover i {
+  transform: scale(1.2);
 }
 .price {
   font-size: 2rem;
   font-weight: 700;
   color: #1e3a8a;
+  transition: color 0.3s ease;
+}
+.price:hover {
+  color: #ef4444;
 }
 .btn-buy {
   width: 100%;
   padding: 12px;
   font-weight: 600;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
-  border: none; /* Remove default button border */
-  cursor: pointer; /* Add cursor for better UX */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
-.btn-buy.basic { background-color: #1e3a8a; }
-.btn-buy.business { background-color: #1e3a8a; }
+.btn-buy.basic { background-color: #163487; }
+.btn-buy.business { background-color: #7851a9; }
 .btn-buy.premium { background-color: #1e3a8a; }
 .btn-buy:hover {
   filter: brightness(1.1);
+  transform: translateY(-2px);
 }
 .tooltip-info {
   cursor: pointer;
   color: #ef4444;
   margin-left: 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.tooltip-info:hover {
+  color: #b91c1c;
+  transform: scale(1.2);
 }
 @media (max-width: 768px) {
   .card-header {
@@ -1110,20 +1169,28 @@ header .navbar .nav-link {
   }
 }
 
-/*End pricing-packages */
+/* Keyframes for Fade-In Effect */
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* Contact page/Consulting*/
+/* Contact Page/Consulting */
 
 .card-header.basic {
-  background-color: #9fc8f1;
+  background-color: #000800;
 }
-
 .card-header.business {
-  background-color: #889fe9;
+  background-color: #7851a9;
 }
-
 .card-header.premium {
-  background-color: #9fc8f1;
+  background-color: #e63939;
 }
 
 
@@ -1704,24 +1771,30 @@ body {
 }
 
 .footer-social a {
-    line-height: 1; /* Adjust line height for icons */
-    border-radius: 50%;
-    margin: 0 8px 8px 0; /* Adjusted margin for spacing */
-    border: 1px solid #555555; /* Darker border for social icons */
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    display: inline-flex; /* Use flex to center icon */
-    align-items: center;
-    justify-content: center;
-    color: #cccccc; /* Light color for icons */
-    font-size: 14px; /* Adjust icon size */
+  line-height: 1; /* Adjust line height for icons */
+  border-radius: 50%;
+  margin: 0 8px 8px 0; /* Adjusted margin for spacing */
+  border: 1px solid #555555; /* Darker border for social icons */
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: inline-flex; /* Use flex to center icon */
+  align-items: center;
+  justify-content: center;
+  color: #cccccc; /* Light color for icons */
+  font-size: 14px; /* Adjust icon size */
+  text-decoration: none; /* Remove default underline */
 }
 
 .footer-social a:hover {
-    background: #ea1f25; /* Orange hover background */
-    border-color: #ea1f25;
-    color: #fff;
+  background: #ea1f25; /* Orange hover background */
+  border-color: #ea1f25;
+  color: #fff;
+}
+
+/* Ensure icons inherit styles */
+.footer-social a i {
+  line-height: 1; /* Match parent line-height */
 }
 
 .link-thumbnail {
