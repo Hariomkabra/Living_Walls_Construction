@@ -1041,191 +1041,253 @@ main, .site-content {
 
 /*pricing-packages */
 
-/* Pricing Packages */
-
-.card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px;
-  background-color: #ffffff; /* Fixed typo from #ffff to #ffffff */
-  animation: fadeInCard 0.5s ease-out forwards; /* Added fade-in on load */
-}
-.card:hover {
-  transform: translateY(-5px) scale(1.02); /* Added subtle scale for hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
-}
-.card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  transition: border-color 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-.card:hover::after {
-  border-color: rgba(239, 68, 68, 0.5); /* Subtle red glow border on hover (matches feature-item color) */
-}
-.holographic-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  opacity: 0.3;
-  pointer-events: none;
-  transition: left 0.5s ease, opacity 0.3s ease; /* Smooth shimmer effect */
-}
-.holographic-card:hover::before {
-  left: 100%; /* Shimmer moves across card on hover */
-  opacity: 0.5; /* Slightly more visible */
-}
-.card-header {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-.card-header:hover {
-  transform: scale(1.02);
-}
-.card-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: skewY(-8deg);
-  transform-origin: top left;
-  transition: opacity 0.3s ease;
-}
-.card-header:hover::before {
-  opacity: 0.8;
-}
-.card-header.basic::before { background-color: #000800; }
-.card-header.business::before { background-color: #4e006e; }
-.card-header.premium::before { background-color: #e63939; }
-.card-header h5 {
-  color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-.card-header:hover h5 {
-  color: #f0f0f0;
-}
-.feature-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  font-size: 0.95rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-.feature-item:hover {
-  transform: translateX(5px);
-  color: #ef4444;
-}
-.feature-item i {
-  color: #ef4444;
-  margin-right: 10px;
-  font-size: 1.1rem;
-  transition: transform 0.3s ease;
-}
-.feature-item:hover i {
-  transform: scale(1.2);
-}
-.price {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1e3a8a;
-  transition: color 0.3s ease;
-}
-.price:hover {
-  color: #ef4444;
-}
+/* Choose buttons */
 .btn-buy {
-  width: 100%;
-  padding: 12px;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
+  border-radius: 25px;
   cursor: pointer;
-}
-.btn-buy.basic { background-color: #163487; }
-.btn-buy.business { background-color: #7851a9; }
-.btn-buy.premium { background-color: #1e3a8a; }
-.btn-buy:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-}
-.tooltip-info {
-  cursor: pointer;
-  color: #ef4444;
-  margin-left: 5px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.tooltip-info:hover {
-  color: #b91c1c;
-  transform: scale(1.2);
-}
-@media (max-width: 768px) {
-  .card-header {
-    height: 60px;
-  }
-  .price {
-    font-size: 1.75rem;
-  }
-  .feature-item {
-    font-size: 0.9rem;
-  }
-  .btn-buy {
-    padding: 10px;
-  }
+  transition: background-color 0.3s ease;
 }
 
-/* Keyframes for Fade-In Effect */
-@keyframes fadeInCard {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.btn-buy.business {
+  background-color: #888888;
+  color: white;
 }
 
-/* Contact Page/Consulting */
+.btn-buy.premium {
+  background-color: #1e3a8a;
+  color: white;
+}
 
-.card-header.basic {
-  background-color: #000800;
+/* Responsive spacing for card content */
+.card-body p,
+.card-body ul {
+  margin-top: 15px;
+}
+
+ul.list-unstyled li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/* Price text */
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* Section background */
+#pricing-packages {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+/* Pricing Cards */
+#pricing-packages .card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#pricing-packages .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Plan Titles */
+#pricing-packages .card-header h5 {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+/* Pricing */
+#pricing-packages .card-body h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Monthly subtitle */
+#pricing-packages .card-body p {
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: -10px;
+}
+
+/* Buttons */
+#pricing-packages .btn {
+  width: 100%;
+  font-weight: 600;
+  padding: 10px 0;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Feature List */
+#pricing-packages ul {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+#pricing-packages ul li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ccc;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+#pricing-packages ul li:last-child {
+  border-bottom: none;
+}
+
+/* Heading */
+
+
+.card-header.classic {
+
+  color: #000080;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 .card-header.business {
-  background-color: #4e006e;
+  
+  color: #ffffff;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 .card-header.premium {
-  background-color: #e63939;
+ 
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
+.card-body .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #121212;
+}
+
+.feature-item {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #444;
+}
+.feature-item i {
+  color: #eb2b2b; /* Tailwind green-500 for checkmark */
+  margin-right: 8px;
+}
+
+
+/* Holographic shimmer update */
+.holographic-card::before {
+  animation: shimmer 2.5s infinite linear;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+
+.pricing-card {
+  width: 300px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.card-header {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 10px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.features li {
+  font-size: 16px;
+  color: #444;
+  margin: 10px 0;
+}
+
+
+.price {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 15px 0 5px;
+}
+
+.sub-price {
+  font-size: 14px;
+  color: #444;
+}
+
+.approx-text {
+  font-size: 13px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.approx-text i {
+  font-size: 12px;
+  margin-left: 3px;
+}
+
+.buy-btn {
+  margin-top: 20px;
+  background-color: #000;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background-color: #333;
+}
+
+
+/* Contact Page/Consulting */
 
 body {
   font-family: Arial, sans-serif;
@@ -1255,10 +1317,7 @@ body {
   padding: 10px;
   font-size: 1rem;
 }
-.form-control:focus {
-  border-color: #ea1f25;
-  box-shadow: none;
-}
+
 .toggle-switch {
   display: flex;
   align-items: center;
@@ -1304,26 +1363,18 @@ body {
   width: 100%;
   cursor: pointer;
 }
-.btn-consult:hover {
-  background-color: #ea1f25;
-}
+
 .terms-text {
   font-size: 0.9rem;
   color: #666;
   margin-top: 10px;
   text-align: center;
 }
-.terms-text a {
-  color: #ea1f25;
-  text-decoration: none;
-}
+
 .contact-info p {
   color: #666;
 }
-.contact-info a {
-  color: #e57373;
-  text-decoration: none;
-}
+
 
      /* End Contact page/Consulting*/
 
