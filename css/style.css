@@ -1042,250 +1042,137 @@ main, .site-content {
 
 /*pricing-packages */
 
-/* Choose buttons */
-.btn-buy {
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  /* Shared styles for all cards */
+  .pricing-card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    min-height: 450px;
+    margin: 30px auto;
+    padding: 60px 25px 25px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    transition: transform 0.3s ease;
 }
 
 
-.btn-buy.business {
-  background-color: #888888;
-  color: white;
-}
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        .pricing-card h2 {
+            position: absolute;
+            top: -14px; /* Fine-tuned to ensure titles cut the 4px border at the same level */
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 30;
+            font-size: 24px;
+            padding: 0 10px;
+            line-height: 1;
+            background-color: #fff;
+        }
+        .pricing-card .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #000;
+        }
+        .pricing-card .price span {
+            font-size: 16px;
+            font-weight: normal;
+            display: block;
+        }
+        .pricing-card .choose-btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .pricing-card .choose-btn:hover {
+            transform: scale(1.05);
+        }
+        .pricing-card .description {
+            font-size: 15px;
+            color: #666;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+        .pricing-card .options {
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 25px 0 10px;
+        }
+        .pricing-card .options-box {
+            background-color: #e0e0e0;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-.btn-buy.premium {
-  background-color: #1e3a8a;
-  color: white;
-}
+        /* Specific styles for Basic card */
+        .basic-card {
+            border: 4px solid #000080;
+        }
+        .basic-card h2 {
+            color: #000080;
+        }
+        .basic-card .choose-btn {
+            background-color: #000080;
+            color: #fff;
+        }
+        .basic-card .choose-btn:hover {
+            background-color: #f24b4b;
+        }
 
-/* Responsive spacing for card content */
-.card-body p,
-.card-body ul {
-  margin-top: 15px;
-}
+        /* Specific styles for Silver card */
+        .silver-card {
+            border: 4px solid #4e006e;
+        }
+        .silver-card h2 {
+            color: #4e006e;
+        }
+        .silver-card .choose-btn {
+            background-color: #000080;
+            color: #fff;
+        }
+        .silver-card .choose-btn:hover {
+            background-color: #ea5454;
+        }
 
-ul.list-unstyled li {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-}
+        /* Specific styles for Gold card */
+        .gold-card {
+            border: 4px solid #ea1f25;
+        }
+        .gold-card h2 {
+            color: #ea1f25;
+        }
+        .gold-card .choose-btn {
+            background-color: #000080;
+            color: #fff;
+        }
+        .gold-card .choose-btn:hover {
+            background-color:  #ea5454;
+        }
 
-/* Price text */
-.price {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-}
-
-
-/* Section background */
-#pricing-packages {
-  background-color: #f8f9fa;
-  padding: 60px 0;
-}
-
-/* Pricing Cards */
-#pricing-packages .card {
-  background-color: #fff;
-  border: 1px solid #dee2e6;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-#pricing-packages .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-/* Plan Titles */
-#pricing-packages .card-header h5 {
-  font-size: 1.25rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-
-/* Pricing */
-#pricing-packages .card-body h2 {
-  font-size: 2.5rem;
-  color: #333;
-}
-
-/* Monthly subtitle */
-#pricing-packages .card-body p {
-  font-size: 0.95rem;
-  color: #777;
-  margin-top: -10px;
-}
-
-/* Buttons */
-#pricing-packages .btn {
-  width: 100%;
-  font-weight: 600;
-  padding: 10px 0;
-  border-radius: 30px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-/* Feature List */
-#pricing-packages ul {
-  padding-left: 0;
-  list-style: none;
-  margin-top: 20px;
-}
-
-#pricing-packages ul li {
-  padding: 8px 0;
-  border-bottom: 1px dashed #ccc;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-#pricing-packages ul li:last-child {
-  border-bottom: none;
-}
-
-/* Heading */
-
-
-.card-header.classic {
-
-  color: #000080;
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-.card-header.business {
-  
-  color: #ffffff;
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-.card-header.premium {
- 
-  color: #fff;
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.card-body .price {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #121212;
-}
-
-.feature-item {
-  margin: 10px 0;
-  font-size: 1rem;
-  color: #444;
-}
-.feature-item i {
-  color: #eb2b2b; /* Tailwind green-500 for checkmark */
-  margin-right: 8px;
-}
-
-
-/* Holographic shimmer update */
-.holographic-card::before {
-  animation: shimmer 2.5s infinite linear;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-
-.pricing-card {
-  width: 300px;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  background-color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-}
-
-.card-header {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ffffff;
-  padding-bottom: 10px;
-}
-
-.features {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.features li {
-  font-size: 16px;
-  color: #444;
-  margin: 10px 0;
-}
-
-
-.price {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 15px 0 5px;
-}
-
-.sub-price {
-  font-size: 14px;
-  color: #444;
-}
-
-.approx-text {
-  font-size: 13px;
-  color: #888;
-  margin-top: 5px;
-}
-
-.approx-text i {
-  font-size: 12px;
-  margin-left: 3px;
-}
-
-.buy-btn {
-  margin-top: 20px;
-  background-color: #000;
-  color: white;
-  padding: 10px 22px;
-  border-radius: 6px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.buy-btn:hover {
-  background-color: #333;
-}
 
 
 /* Contact Page/Consulting */
