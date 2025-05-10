@@ -70,7 +70,7 @@ Key highlights:
 
 ## 🚀 Deployment  
 Hosted on Netlify with continuous deployment:  
-[![Netlify Status](https://api.netlify.com/api/v1/badges/.../deploy-status)](https://app.netlify.com/sites/...)  
+https://www.netlify.com/
 
 ---
 
