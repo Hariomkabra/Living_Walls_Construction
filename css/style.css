@@ -58,36 +58,6 @@ h1, h2, h3, h4, h5 {
     color: #000; }
 
 
-    /*WhatsApp Floating Icon*/
-    .whatsapp-icon-fixed {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    
-    .whatsapp-icon-fixed a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #25d366;
-      color: white;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-    }
-    
-    .whatsapp-icon-fixed a:hover {
-      transform: scale(1.1);
-    }
-    
-    .whatsapp-icon-fixed img {
-      height: 36px;
-      width: 36px;
-    }
      
 
     /* Chatbot with WhatsApp Fallback*/
@@ -348,61 +318,58 @@ h1, h2, h3, h4, h5 {
 
     
 
-
 /* Header */
 header {
-  position: fixed; /* Make header stick to the top */
-  top: 0; /* Align to the top of the viewport */
-  left: 0; /* Ensure it spans full width */
-  width: 100%; /* Full viewport width */
-  z-index: 2000; /* Above other elements (e.g., chat bot, cta-overlap) */
-  background: white; /* Solid background for fixed header */
-  height: 80px; /* Increase this value to make the header taller */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2800;
+  background: white;
+  height: 60px; /* Reduced from 80px */
 }
 
 header .navbar {
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  padding-top: 0.2rem; /* Reduced from 0.3rem */
+  padding-bottom: 0.2rem;
   background: white !important;
 }
 
 header .navbar-brand {
   position: absolute;
   left: 50%;
-  transform: translateX(-300%); /* Adjusted for slight left shift (was -300%) */
+  transform: translateX(-300%); /* Kept as original */
 }
 
 header .navbar-brand img {
-  max-height: 100px; /* Updated logo height */
-  width: 180px; /* Updated logo width */
-  display: block; /* Ensure image behaves as a block */
+  max-height: 80px; /* Reduced from 100px */
+  width: 140px; /* Reduced from 180px */
+  display: block;
 }
 
 header .navbar .nav-link {
-  padding: 1rem 0.8rem !important; /* Reduced padding for nav links */
+  padding: 0.8rem 0.6rem !important; /* Reduced from 1rem 0.8rem */
 }
 
 @media (max-width: 1199.98px) {
   header .navbar {
     background: white !important;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding-top: 0.3rem; /* Reduced from 0.4rem */
   }
 
   header .navbar-brand {
-    position: relative; /* Adjust for mobile if navbar collapses */
+    position: relative;
     left: auto;
     transform: none;
-    text-align: center; /* Center logo on smaller screens */
+    text-align: center;
   }
 }
 
 @media (max-width: 991.98px) {
   header .navbar .nav-link {
-    padding: 0.6rem 0rem !important; /* Reduced padding for mobile */
+    padding: 0.4rem 0rem !important; /* Reduced from 0.6rem 0rem */
   }
 }
-
 /* Prevent content overlap */
 main, .site-content {
   padding-top: 90px; /* Adjust based on header height (70px logo + padding) */

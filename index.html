@@ -73,6 +73,11 @@
                     <li class="nav-item">
                       <a class="nav-link linkred" href="about.html"><span>About</span></a>
                     </li>
+
+                     <li class="nav-item">
+                      <a class="nav-link linkred" href="addtocart.html"><span>Add to Cart</span></a>
+                    </li>
+
                     <li class="nav-item">
                       <a class="nav-link linkred" href="contact.html"><span>Contact</span></a>
                     </li>
@@ -81,10 +86,7 @@
                         
                         <span class="d-inline-block px-4 py-2 border quotation-btn">Quotation</span>
                       </a>
-                    </li>
-                    
-
-                    
+                    </li>      
                       
                   </ul>
               </div>
@@ -94,177 +96,388 @@
   </header>
     <!-- END header -->
 
-   <!--WhatsApp Floating Icon--> 
+ <style>
+    /* WhatsApp Floating Icon */
+    .whatsapp-icon-fixed {
+      position: fixed;
+      bottom: 20px; /* Bottommost icon */
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      z-index: 1000;
+    }
+    .whatsapp-icon-fixed img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
 
-    <div class="whatsapp-icon-fixed">
-      <a href="https://wa.me/9739011656" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Icon">
-      </a>
+    /* Chatbot Icon and Window */
+    .chat-container {
+      position: fixed;
+      bottom: 100px; /* Above WhatsApp */
+      right: 20px;
+      z-index: 1000;
+    }
+    .chat-icon-container {
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+    }
+    .chat-icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .chat-window {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 100px; /* Shifted left to avoid overlap with icons */
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      flex-direction: column;
+      z-index: 1001;
+    }
+    .chat-window.active {
+      display: flex;
+    }
+    .chat-header {
+      background: #f31212;
+      color: white;
+      padding: 10px;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+    }
+    .chat-messages {
+      flex-grow: 1;
+      padding: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .message {
+      margin-bottom: 10px;
+    }
+    .message.bot .message-content {
+      background: #f1f1f1;
+      padding: 8px;
+      border-radius: 8px;
+    }
+    .message.user .message-content {
+      background: #e33b21;
+      color: white;
+      padding: 8px;
+      border-radius: 8px;
+      text-align: right;
+    }
+    .message-options {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .option-button {
+      background: #f82a2a;
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .option-button:hover {
+      background: #c80a0a;
+    }
+    .input-area {
+      padding: 10px;
+      display: flex;
+      gap: 5px;
+    }
+    .input-area input {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .input-area button {
+      background: #e34242;
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .whatsapp-fallback {
+      padding: 10px;
+      text-align: center;
+    }
+    .whatsapp-icon-small {
+      width: 20px;
+      vertical-align: middle;
+    }
+    .scroll-prompt {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Consultation Icon and Popup */
+    .consult-expert-icon {
+      position: fixed;
+      bottom: 180px; /* Topmost icon */
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #28a745; /* Green to differentiate */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s;
+    }
+    .consult-expert-icon:hover {
+      background-color: #218838;
+    }
+    .consult-expert-icon i {
+      color: white;
+      font-size: 24px;
+    }
+    .consult-expert-popup {
+      display: none;
+      position: fixed;
+      bottom: 180px;
+      right: 100px; /* Shifted left to align with chatbot popup */
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 300px;
+      z-index: 1001;
+      transition: opacity 0.3s, transform 0.3s;
+      opacity: 0;
+      transform: translateX(20px); /* Adjusted for horizontal popup animation */
+    }
+    .consult-expert-popup.active {
+      display: block;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .consult-expert-popup form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .consult-expert-popup input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .consult-expert-popup input:focus {
+      outline: none;
+      border-color: #28a745;
+    }
+    .consult-expert-popup button.expert-holographic-btn {
+      background: linear-gradient(45deg, #e72828, #c92020);
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .consult-expert-popup button.expert-holographic-btn:hover {
+      background: linear-gradient(45deg, #218838, #1bae87);
+    }
+    .consult-expert-popup .expert-note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* Font Awesome */
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+  </style>
+</head>
+<body>
+  <!-- WhatsApp Floating Icon -->
+  <div class="whatsapp-icon-fixed">
+    <a href="https://wa.me/9739011656" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Icon">
+    </a>
+  </div>
+
+  <!-- Chatbot with WhatsApp Fallback -->
+  <div class="chat-container">
+    <div class="chat-icon-container">
+      <img src="https://img.freepik.com/premium-vector/cartoon-boy-wearing-hard-hat-holding-pencil_481747-54623.jpg" alt="Chat Icon" style="height: 60px; width: 60px; border-radius: 50%;" class="chat-icon">
     </div>
-
-       <!-- End WhatsApp Floating Icon--> 
-
-        <!-- Chatbot with WhatsApp Fallback-->
-
-
-        <div class="chat-container">
-          <div class="chat-icon-container">
-            <img src="https://img.freepik.com/premium-vector/cartoon-boy-wearing-hard-hat-holding-pencil_481747-54623.jpg" alt="Chat Icon" style="height: 60px; width: 60px; border-radius: 50%;" class="chat-icon">
-          </div>
-          <div class="chat-window">
-            <div class="chat-header">Chat Support</div>
-            <div class="chat-messages">
-              <div class="message bot">
-                <span class="sender">Bot:</span>
-                <div class="message-content">Hello! How can I assist you today with your floor plan needs?</div>
-              </div>
-            </div>
-            <div class="message-options">
-              <button class="option-button" data-option="option1">What floor plan services do you offer?</button>
-              <button class="option-button" data-option="option2">How much do floor plans cost?</button>
-              <button class="option-button" data-option="option3">Where can I get floor plans?</button>
-              <button class="option-button" data-option="option4">Do you offer 24/7 support for floor plans?</button>
-              <button class="option-button" data-option="option5">Other question about floor plans</button>
-            </div>
-            <div class="input-area" style="display:none;">
-              <input type="text" placeholder="Type your question about floor plans..." />
-              <button id="send-button">Send</button>
-            </div>
-            <div class="whatsapp-fallback">
-              Need more help?
-              <a href="https://wa.me/9739011656" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Icon" class="whatsapp-icon-small">
-                Chat on WhatsApp
-              </a>
-            </div>
-            <div class="scroll-prompt">Ask your query</div>
-          </div>
+    <div class="chat-window">
+      <div class="chat-header">Chat Support</div>
+      <div class="chat-messages">
+        <div class="message bot">
+          <span class="sender">Bot:</span>
+          <div class="message-content">Hello! How can I assist you today with your floor plan needs?</div>
         </div>
-        
-        <script>
-        const chatIconContainer = document.querySelector(".chat-icon-container");
-        const chatWindow = document.querySelector(".chat-window");
-        const chatMessages = document.querySelector(".chat-messages");
-        const messageOptions = document.querySelector(".message-options");
-        const whatsappFallback = document.querySelector(".whatsapp-fallback");
-        const sendButtonArea = document.querySelector(".input-area");
-        const sendButton = document.querySelector("#send-button");
-        const textInput = document.querySelector(".input-area input");
-        
-        const whatsappNumber = "9739011656"; // Replace with your WhatsApp number including country code.
-        
-        let isChatOpen = false;
-        let currentQuestion = 0;
-        const questions = [
-          "What floor plan services do you offer?",
-          "How much do floor plans cost?",
-          "Where can I get floor plans?",
-          "Do you offer 24/7 support for floor plans?",
-          "Other question about floor plans"
-        ];
-        
-        chatIconContainer.addEventListener("click", () => {
-          isChatOpen = !isChatOpen;
-          chatWindow.style.display = isChatOpen ? "flex" : "none";
-          if (isChatOpen) {
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          }
-        });
-        
-        chatWindow.addEventListener('scroll', () => {
-          if (chatWindow.scrollTop > 50) {
-            chatWindow.classList.add('show-scroll-prompt');
-          } else {
-            chatWindow.classList.remove('show-scroll-prompt');
-          }
-        });
-        
-        messageOptions.addEventListener("click", (event) => {
-          if (event.target.classList.contains("option-button")) {
-            const option = event.target.dataset.option;
-            let response = "";
-        
-            switch (option) {
-              case "option1":
-                response = "We offer custom floor plan design, 2D/3D modeling, and home layout customization services.";
-                break;
-              case "option2":
-                response = "Floor plan costs depend on size and customization. Please provide details for a personalized quote.";
-                break;
-              case "option3":
-                response = "We provide floor plans in Bengaluru, Chennai, Hyderabad, and Mysuru.";
-                break;
-              case "option4":
-                response = "Yes, we offer 24/7 support to assist with your floor plan queries.";
-                break;
-              case "option5":
-                response = "Please type your question about floor plans below.";
-                sendButtonArea.style.display = "flex";
-                messageOptions.style.display = "none";
-                return;
-              default:
-                response = "I'm sorry, I didn't understand that.";
-            }
-        
-            addMessage("user", event.target.textContent);
-            addMessage("bot", response);
-            currentQuestion++;
-            if (currentQuestion < questions.length) {
-              messageOptions.innerHTML = `<button class="option-button" data-option="option${currentQuestion + 1}">${questions[currentQuestion]}</button>`;
-            } else {
-              messageOptions.style.display = 'none';
-            }
-          }
-        });
-        
-        sendButton.addEventListener("click", () => {
-          const question = textInput.value;
-          if (question.trim() !== "") {
-            addMessage("user", question);
-            addMessage("bot", "Thank you! A floor plan expert will contact you soon with a detailed response.");
-            textInput.value = "";
-            sendButtonArea.style.display = "none";
-            messageOptions.style.display = "flex";
-          }
-        });
-        
-        function addMessage(sender, text) {
-          const messageDiv = document.createElement("div");
-          messageDiv.classList.add("message", sender);
-          messageDiv.innerHTML = `<span class="sender">${sender}:</span><div class="message-content">${text}</div>`;
-          chatMessages.appendChild(messageDiv);
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-        </script>
-
-   
-
-    <!-- End Chatbot with WhatsApp Fallback-->
-    
-
-      <!-- Hero section  -->
-
-      <!--  slider -->
-
-    <div class="home-slider-wrapper" style="position: relative; margin-top: 15px;">
-      <div class="consultation-card" style="position: absolute; top: 80px; right: 20px; z-index: 100;">
-
-        
-          <!-- Consultation Card HTML -->
-          <h4><i class="fa fa-phone"></i>Talk to Our Expert</h4>
-          <form>
-              <input type="text" placeholder="Name*" required />
-              
-                <input type="text" placeholder="📞 Mobile Number*/Whatapp" required />
-              <input type="email" placeholder="Email" />
-              <input type="text" placeholder="Location of your Plot*" required />
-              <button type="submit"class="btn btn-primary btn-block holographic-btn">Book Free Consultation</button>
-              <p class="note">
-                  By submitting this form, I confirm that I have read and agreed to accept
-                  the privacy policy.
-              </p>
-          </form>
       </div>
+      <div class="message-options">
+        <button class="option-button" data-option="option1">What floor plan services do you offer?</button>
+        <button class="option-button" data-option="option2">How much do floor plans cost?</button>
+        <button class="option-button" data-option="option3">Where can I get floor plans?</button>
+        <button class="option-button" data-option="option4">Do you offer 24/7 support for floor plans?</button>
+        <button class="option-button" data-option="option5">Other question about floor plans</button>
+      </div>
+      <div class="input-area" style="display:none;">
+        <input type="text" placeholder="Type your question about floor plans..." />
+        <button id="send-button">Send</button>
+      </div>
+      <div class="whatsapp-fallback">
+        Need more help?
+        <a href="https://wa.me/9739011656" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Icon" class="whatsapp-icon-small">
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="scroll-prompt">Ask your query</div>
+    </div>
+  </div>
+
+  <!-- Consultation Icon and Popup -->
+  <div class="consult-expert-icon">
+    <i class="fa fa-phone"></i>
+  </div>
+  <div class="consult-expert-popup">
+    <h4><i class="fa fa-phone"></i> Talk to Our Expert</h4>
+    <form>
+      <input type="text" placeholder="Name*" required />
+      <input type="text" placeholder="📞 Mobile Number*/WhatsApp" required />
+      <input type="email" placeholder="Email" />
+      <input type="text" placeholder="Location of your Plot*" required />
+      <button type="submit" class="btn btn-primary btn-block expert-holographic-btn">Book Free Consultation</button>
+      <p class="expert-note">
+        By submitting this form, I confirm that I have read and agreed to accept the privacy policy.
+      </p>
+    </form>
+  </div>
+
+  <script>
+    // Chatbot JavaScript
+    const chatBtn = document.querySelector(".chat-icon-container");
+    const chatPopup = document.querySelector(".chat-window");
+    const chatMsgArea = document.querySelector(".chat-messages");
+    const msgOptions = document.querySelector(".message-options");
+    const sendArea = document.querySelector(".input-area");
+    const sendBtn = document.querySelector("#send-button");
+    const textArea = document.querySelector(".input-area input");
+
+    const whatsappNumber = "9739011656";
+    let isChatOpen = false;
+    let currentQuestion = 0;
+    const questions = [
+      "What floor plan services do you offer?",
+      "How much do floor plans cost?",
+      "Where can I get floor plans?",
+      "Do you offer 24/7 support for floor plans?",
+      "Other question about floor plans"
+    ];
+
+    chatBtn.addEventListener("click", () => {
+      isChatOpen = !isChatOpen;
+      chatPopup.style.display = isChatOpen ? "flex" : "none";
+      if (isChatOpen) {
+        chatMsgArea.scrollTop = chatMsgArea.scrollHeight;
+      }
+    });
+
+    chatPopup.addEventListener('scroll', () => {
+      if (chatPopup.scrollTop > 50) {
+        chatPopup.classList.add('show-scroll-prompt');
+      } else {
+        chatPopup.classList.remove('show-scroll-prompt');
+      }
+    });
+
+    msgOptions.addEventListener("click", (event) => {
+      if (event.target.classList.contains("option-button")) {
+        const option = event.target.dataset.option;
+        let response = "";
+
+        switch (option) {
+          case "option1":
+            response = "We offer custom floor plan design, 2D/3D modeling, and home layout customization services.";
+            break;
+          case "option2":
+            response = "Floor plan costs depend on size and customization. Please provide details for a personalized quote.";
+            break;
+          case "option3":
+            response = "We provide floor plans in Bengaluru, Chennai, Hyderabad, and Mysuru.";
+            break;
+          case "option4":
+            response = "Yes, we offer 24/7 support to assist with your floor plan queries.";
+            break;
+          case "option5":
+            response = "Please type your question about floor plans below.";
+            sendArea.style.display = "flex";
+            msgOptions.style.display = "none";
+            return;
+          default:
+            response = "I'm sorry, I didn't understand that.";
+        }
+
+        addChatMessage("user", event.target.textContent);
+        addChatMessage("bot", response);
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          msgOptions.innerHTML = `<button class="option-button" data-option="option${currentQuestion + 1}">${questions[currentQuestion]}</button>`;
+        } else {
+          msgOptions.style.display = 'none';
+        }
+      }
+    });
+
+    sendBtn.addEventListener("click", () => {
+      const question = textArea.value;
+      if (question.trim() !== "") {
+        addChatMessage("user", question);
+        addChatMessage("bot", "Thank you! A floor plan expert will contact you soon with a detailed response.");
+        textArea.value = "";
+        sendArea.style.display = "none";
+        msgOptions.style.display = "flex";
+      }
+    });
+
+    function addChatMessage(sender, text) {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message", sender);
+      messageDiv.innerHTML = `<span class="sender">${sender}:</span><div class="message-content">${text}</div>`;
+      chatMsgArea.appendChild(messageDiv);
+      chatMsgArea.scrollTop = chatMsgArea.scrollHeight;
+    }
+
+    // Consultation Popup JavaScript
+    const expertBtn = document.querySelector('.consult-expert-icon');
+    const expertPopup = document.querySelector('.consult-expert-popup');
+
+    expertBtn.addEventListener('click', () => {
+      expertPopup.classList.toggle('active');
+    });
+
+    expertBtn.addEventListener('mouseenter', () => {
+      expertPopup.classList.add('active');
+    });
+
+    expertPopup.addEventListener('mouseleave', () => {
+      expertPopup.classList.remove('active');
+    });
+  </script>
+  
   
       <section class="home-slider owl-carousel">
           <div class="slider-item" style="background-image: url('img/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg');">
