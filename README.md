@@ -38,6 +38,7 @@ Netlify – Hosting and deployment
 This website is deployed using Netlify. Any changes pushed to the main branch are automatically updated on the live site.
 
 🌐 Live Website
-🔗 livingwallconstruction.netlify.app
+🔗 https://livingwallconstruction.netlify.app/
+
 
 
